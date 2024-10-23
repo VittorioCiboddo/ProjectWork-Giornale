@@ -1,14 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tech News</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c2d1d7;
+        }
+
+        header {
+            background-color: #93b0ff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #4f78ff;
+            overflow: hidden;
+            padding-left: 700px;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #3957b99c;
+        }
+
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+
+        .ultimora {
+            width: 25%;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .ultimora h2 {
+            text-align: center;
+        }
+
+        .ultimora div {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #e7e7e7;
+            border-radius: 5px;
+        }
+
+        .main-article {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-left: 20px;
+        }
+
+        .main-article img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #9eacff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Giornale Tecnologico</h1>
-    <p>bau</p>
-    <p>rick</p>
-    <p>PD</p>
+
+    <header>
+        <h1>Tech News</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Notizie</a>
+        <a href="#">Guide</a>
+        <a href="#">Recensioni</a>
+        <a href="#">Contatti</a>
+    </nav>
+
+    <div class="container">
+        <div class="ultimora">
+            <h2>Ultim'ora</h2>
+            <div>
+                <h3>Notizia 1</h3>
+                <p>Descrizione breve della notizia 1.</p>
+            </div>
+            <div>
+                <h3>Notizia 2</h3>
+                <p>Descrizione breve della notizia 2.</p>
+            </div>
+            <div>
+                <h3>Notizia 3</h3>
+                <p>Descrizione breve della notizia 3.</p>
+            </div>
+        </div>
+
+        <div class="main-article">
+            <h2>Titolo dell'Articolo Principale</h2>
+            <img src="immagine-articolo.jpg" alt="Immagine dell'articolo">
+            <p>
+                Questo è un esempio di paragrafo per l'articolo principale. Qui puoi aggiungere i contenuti principali 
+                dell'articolo e inserire immagini pertinenti al contesto.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Tech News - Tutti i diritti riservati.</p>
+    </footer>
+
 </body>
 </html>
