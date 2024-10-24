@@ -36,39 +36,6 @@ nav a:hover {
     padding: 20px;
 }
 
-.ultimora {
-    width: 25%;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
-
-.ultimora h2 {
-    text-align: center;
-}
-
-.ultimora div {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #e7e7e7;
-    border-radius: 5px;
-}
-
-.main-article {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #f9f9f9;
-    margin-left: 20px;
-}
-
-img{
-    padding-bottom: 20px;
-}
-
-.main-article img {
-    width: 100%;
-    height: auto;
-}
-
 footer {
     background-color: #9eacff;
     color: white;
