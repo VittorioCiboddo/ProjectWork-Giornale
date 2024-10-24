@@ -24,7 +24,7 @@ public class Evento {
     private LocalDateTime dataEvento;
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria", referencedColumnName = "id_evento")
+    @JoinColumn(name = "fk_id_categoria", referencedColumnName = "id_categoria")
     private Categoria categoria;
 
     public int getIdEvento() {

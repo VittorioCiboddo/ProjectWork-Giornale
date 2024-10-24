@@ -29,7 +29,7 @@ public class Notizia {
     private String linkVideo;
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria", referencedColumnName = "id_notizia")
+    @JoinColumn(name = "fk_id_categoria", referencedColumnName = "id_categoria")
     private Categoria categoria;
 
     public int getIdNotizia() {
