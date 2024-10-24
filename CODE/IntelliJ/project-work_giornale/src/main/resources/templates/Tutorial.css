@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c2d1d7;
+}
+
+header {
+    background-color: #93b0ff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #4f78ff;
+    overflow: hidden;
+    padding-left: 670px;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #3957b99c;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+}
+
+footer {
+    background-color: #9eacff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
