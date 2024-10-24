@@ -14,8 +14,15 @@ header {
 
 nav {
     background-color: #4f78ff;
+<<<<<<< HEAD
     /* padding-left: 500px;
 	margin: 0 auto;*/
+=======
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+>>>>>>> a432eef31066acd1c74ff989b1436bc5ebfef474
 }
 
 nav.navbar a {
@@ -29,6 +36,7 @@ nav.navbar a:hover {
     background-color: #3957b99c;
 }
 
+<<<<<<< HEAD
 .dropdown-menu{
     margin-left: 660px;
     background-color: #4f78ff;
@@ -36,7 +44,16 @@ nav.navbar a:hover {
 
 .container {
     /* display: flex;*/
+=======
+#container {
+    display: flex;
+>>>>>>> a432eef31066acd1c74ff989b1436bc5ebfef474
     padding: 20px;
+    width: 1024px;
+    height: 100%;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navbar-expand-lg {
@@ -53,4 +70,37 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 20px;
+}
+#tec {
+    padding: 20px;
+    bottom: 20px;
+}
+#int {
+    padding: 20px;
+}
+#pc{
+    padding: 20px;
+}
+#linkz {
+    width: 200px; /* Imposta una larghezza per il menu laterale */
+    margin-right: 20px; /* Spazio tra la sezione laterale e l'articolo */
+}
+
+.linkz ul {
+    
+    padding:
+}
+
+
+#link a {
+    display: block; /* Rende l'intero area cliccabile */
+    margin-bottom: 10px; /* Spazio tra i link */
+    color: #000; /* Cambia il colore del testo per il contrasto */
+}
+
+#link a:hover {
+    text-decoration: underline; /* Aggiungi effetto al passaggio del mouse */
+}
+article {
+    flex: 1; /* Consente all'articolo di occupare il resto dello spazio disponibile */
 }
