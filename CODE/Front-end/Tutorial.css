@@ -15,7 +15,9 @@ header {
 nav {
     background-color: #4f78ff;
     overflow: hidden;
-    padding-left: 670px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 nav a {
@@ -23,7 +25,7 @@ nav a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px;
+    padding: 14px 20px;
     text-decoration: none;
 }
 
@@ -31,9 +33,14 @@ nav a:hover {
     background-color: #3957b99c;
 }
 
-.container {
+#container {
     display: flex;
     padding: 20px;
+    width: 1024px;
+    height: 100%;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer {
@@ -42,4 +49,37 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 20px;
+}
+#tec {
+    padding: 20px;
+    bottom: 20px;
+}
+#int {
+    padding: 20px;
+}
+#pc{
+    padding: 20px;
+}
+#linkz {
+    width: 200px; /* Imposta una larghezza per il menu laterale */
+    margin-right: 20px; /* Spazio tra la sezione laterale e l'articolo */
+}
+
+.linkz ul {
+    
+    padding:
+}
+
+
+#link a {
+    display: block; /* Rende l'intero area cliccabile */
+    margin-bottom: 10px; /* Spazio tra i link */
+    color: #000; /* Cambia il colore del testo per il contrasto */
+}
+
+#link a:hover {
+    text-decoration: underline; /* Aggiungi effetto al passaggio del mouse */
+}
+article {
+    flex: 1; /* Consente all'articolo di occupare il resto dello spazio disponibile */
 }
