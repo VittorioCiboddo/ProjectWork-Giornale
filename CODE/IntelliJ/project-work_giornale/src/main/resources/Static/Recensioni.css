@@ -14,26 +14,37 @@ header {
 
 nav {
     background-color: #4f78ff;
-    overflow: hidden;
-    padding-left: 670px;
+    /* padding-left: 500px;
+	margin: 0 auto;*/
 }
 
-nav a {
-    float: left;
-    display: block;
+nav.navbar a {
     color: white;
     text-align: center;
-    padding: 14px;
+    padding: 14px 20px;
     text-decoration: none;
 }
 
-nav a:hover {
+nav.navbar a:hover {
     background-color: #3957b99c;
 }
 
+.dropdown-menu{
+    margin-left: 660px;
+    background-color: #4f78ff;
+}
+
 .container {
-    display: flex;
+    /* display: flex;*/
     padding: 20px;
+}
+
+.navbar-expand-lg {
+	justify-content: center;
+}
+
+.scendi {
+	padding-top: 13px;
 }
 
 footer {
