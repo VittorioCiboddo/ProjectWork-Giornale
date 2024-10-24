@@ -46,6 +46,26 @@ nav.navbar a:hover {
 .scendi {
 	padding-top: 13px;
 }
+.ultimora {
+    width: 23%;
+    background-color: #f4f4f4;
+    padding: 2%;
+	float: left;
+}
+
+.main-article {
+    /*flex-grow: 1;*/
+    padding: 2%;
+    background-color: #f9f9f9;
+    margin-left: 20px;
+	float: left;
+	width: 73%;
+}
+
+.main-article img {
+    width: 100%;
+    height: auto;
+}
 
 footer {
     background-color: #9eacff;
@@ -53,4 +73,5 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 20px;
+	clear: both;
 }

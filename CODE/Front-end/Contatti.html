@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventi Tech</title>
-    <link href="Contatti.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
 
 
         <!-- collegamento a Bootstrap -->
@@ -13,25 +13,49 @@
 </head>
 <body>
 
-    <header>
-        <h1>Tech News</h1>
-    </header>
+    <div class="container-fluid">
+        <header>
+            <h1>Tech News</h1>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary dropdown">
+            
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <button class="btn scendi btn-primary dropdown-toggle bg-primary" data-bs-toggle="dropdown">Notizie</button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="Notizie.html">Tutte le notizie</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="IntelligenzaArtificiale.html">Intelligenza Artificiale</a>
+                        <a class="dropdown-item" href="Cybersecurity.html">Cybersecurity</a>
+                        <a class="dropdown-item" href="Gadget.html">Gadget</a>
+                        <a class="dropdown-item" href="Innovazioni.html">Innovazioni</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Tutorial.html">Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Recensioni.html">Recensioni</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contatti.html">Contatti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Eventi.html">Eventi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AreaAdmin.html">Area Admin</a>
+                </li>
+            </ul>
+        </nav>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="Notizie.html">Notizie</a>
-        <a href="Tutorial.html">Tutorial</a>
-        <a href="Recensioni.html">Recensioni</a>
-        <a href="Contatti.html">Contatti</a>
-        <a href ="Eventi.html">Eventi</a>
-        <a href ="AreaAdmin.html"> Area Admin</a>
-    </nav>
-
-    <div class="container"></div>
-
-    <footer>
-        <p>© 2024 Tech News - Tutti i diritti riservati.</p>
-    </footer>
+        <footer>
+            <p>© 2024 Tech News - Tutti i diritti riservati.</p>
+        </footer>
+    </div>
     
 </body>
 </html>
