@@ -28,5 +28,63 @@ public class Notizia {
     @Column(name = "link_video")
     private String linkVideo;
 
-    // fk_id_categoria
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", referencedColumnName = "id_notizia")
+    private Categoria categoria;
+
+    public int getIdNotizia() {
+        return idNotizia;
+    }
+
+    public void setIdNotizia(int idNotizia) {
+        this.idNotizia = idNotizia;
+    }
+
+    public String getTitolo() {
+        return titolo;
+    }
+
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
+
+    public LocalDate getDataPubblicazione() {
+        return dataPubblicazione;
+    }
+
+    public void setDataPubblicazione(LocalDate dataPubblicazione) {
+        this.dataPubblicazione = dataPubblicazione;
+    }
+
+    public String getImmagine() {
+        return immagine;
+    }
+
+    public void setImmagine(String immagine) {
+        this.immagine = immagine;
+    }
+
+    public String getLinkVideo() {
+        return linkVideo;
+    }
+
+    public void setLinkVideo(String linkVideo) {
+        this.linkVideo = linkVideo;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 }
