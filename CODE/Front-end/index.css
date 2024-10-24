@@ -14,32 +14,43 @@ header {
 
 nav {
     background-color: #4f78ff;
-    overflow: hidden;
-    padding-left: 670px;
+    /* padding-left: 500px;
+	margin: 0 auto;*/
 }
 
-nav a {
-    float: left;
-    display: block;
+nav.navbar a {
     color: white;
     text-align: center;
-    padding: 14px ;
+    padding: 14px 20px;
     text-decoration: none;
 }
 
-nav a:hover {
+nav.navbar a:hover {
     background-color: #3957b99c;
 }
 
+.dropdown-menu{
+    margin-left: 660px;
+    background-color: #4f78ff;
+}
+
 .container {
-    display: flex;
+    /* display: flex;*/
     padding: 20px;
 }
 
+.navbar-expand-lg {
+	justify-content: center;
+}
+
+.scendi {
+	padding-top: 13px;
+}
 .ultimora {
-    width: 25%;
+    width: 23%;
     background-color: #f4f4f4;
-    padding: 20px;
+    padding: 2%;
+	float: left;
 }
 
 .ultimora h2 {
@@ -54,14 +65,12 @@ nav a:hover {
 }
 
 .main-article {
-    flex-grow: 1;
-    padding: 20px;
+    /*flex-grow: 1;*/
+    padding: 2%;
     background-color: #f9f9f9;
     margin-left: 20px;
-}
-
-img{
-    padding-bottom: 20px;
+	float: left;
+	width: 73%;
 }
 
 .main-article img {
@@ -75,4 +84,5 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 20px;
+	clear: both;
 }
