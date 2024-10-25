@@ -12,9 +12,10 @@
 
 </head>
 <body>
-<div class="container-fluid">
-    <header>
-        <h1>Tech News</h1>
+<div class="container-fluid" style="margin-left: 10%; margin-right: 10%; width: 80%;">
+    <header class="d-flex justify-content-between align-items-center p-3 bg-light shadow-sm rounded">
+        <h1 class="ms-3">Tech News</h1>
+        <img src="Logo.png" alt="Logo" width="10%" class="me-3">
     </header>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary dropdown">
 
@@ -62,37 +63,63 @@
         </div>
         <div>
             <h3>Sondaggio: gli europei non si fidano dell'IA nelle elezioni, ma dicono sì al riconoscimento facciale</h3>
-            <p>Un sondaggio condotto dall'Università IE in dieci Paese mostra come gli europei abbiano poca fiducia nell'utilizzo dell'intelligenza artificiale per gestire il voto e come temano manipolazioni dei risultati.</p>
         </div>
         <div>
             <h3>Radio, i 100 anni in Italia da Marconi alla rivoluzione digitale</h3>
-            <p>Un viaggio attraverso il tempo, un racconto che risuona tra la nostalgia e il progresso e che porta in sé l'eco dei cambiamenti di una nazione.</p>
         </div>
         <div>
             <h3>Clementoni lancia il primo robot giocattolo dotato di intelligenza artificiale</h3>
-            <p> Si chiama Airo ed è capace di osservare, memorizzare e riprodurre i movimenti dei bambini in tempo reale grazie all'ausilio di un'app.</p>
         </div>
         <div>
             <h3>Pokémon colpito da un enorme attacco hacker: Game Freak conferma il furto dati</h3>
-            <p>Nelle ultime ore sono emersi online diversi presunti dati interni legati allo sviluppo interno di nuovi videogiochi di      Pokémon, che riguardavano sia titoli ancora usciti che giochi in sviluppo.
-                In assenza di alcun comunicato ufficiale, non era chiaro se si trattasse o meno di dati ufficiali, ma in queste ore è purtroppo arrivata la conferma di un clamoroso enorme attacco hacker ai danni di Game Freak.</p>
         </div>
+        <div id="contenitore-foto"></div>
+        
+        <script>
+            const personaggi = [
+                { nome: "m4f", src: "m4f.png" },
+                { nome: "just", src: "just.png" },
+                { nome: "bio", src: "bio.png" },
+                { nome: "vintage", src: "vintage.png" },
+            ];
+        
+            const contenitoreFoto = document.getElementById('contenitore-foto');
+            let indiceCorrente = -1;
+        
+            // Funzione per visualizzare la foto del personaggio
+            function visualizzaFoto(indice) {
+                if (indice >= 0 && indice < personaggi.length) {
+                    indiceCorrente = indice;
+                    contenitoreFoto.innerHTML = '<img src="' + personaggi[indice].src + '" alt="' + personaggi[indice].nome + '">';
+                }
+            }
+        
+            // Scorrimento automatico delle foto
+            function scorrimentoAutomatico() {
+                setInterval(function() {
+                    indiceCorrente = (indiceCorrente + 1) % personaggi.length;
+                    visualizzaFoto(indiceCorrente);
+                }, 3000); // Cambia immagine ogni 3 secondi
+            }
+        
+            // Inizializzazione dello scorrimento automatico
+            scorrimentoAutomatico();
+        </script>
     </div>
 
     <div class="main-article">
         <h2>I robot Optimus Gen 2 di Tesla all’evento Cybercab sono agili, ma sono autonomi? Cosa possono fare</h2>
-        <img src="images/tesla.jpg" alt="Immagine dell'articolo" class="img-fluid">
+        <img src="tesla.jpg" alt="Immagine dell'articolo" class="img-fluid" style="width: 90%; margin: 6% ">
         <p>
             I robot umanoidi Optimus Gen 2 di Tesla presentati da Elon Musk all'evento Cybercab camminano, danzano, servono da bere e interagiscono con le persone. Anche se, a detta di alcuni, non erano del tutto autonomi. Elon Musk intende produrli in massa per renderli disponibili a prezzi di 20-30.000 dollari.
             Un gruppo di robot umanoidi Optimus Gen 2 prodotti da Tesla, l'azienda automobilistica di Elon Musk, ha sfilato a Los Angeles durante l'evento Cybercab dedicato alla presentazione del nuovo Tesla Robovan (una sorta di navetta a guida autonoma). Musk ha approfittato dell'occasione per elogiare le capacità dei suoi robot, sottolineando quanto siano avanzate rispetto al primo prototipo mostrato in pubblico nel 2022. Oggi i robot Optimus possono camminare, svolgere attività quotidiane come portare pacchi o irrigare piante, e persino interagire con le persone: a vederli sembrano in grado di per svolgere compiti domestici. I video diffusi mostrano robot che camminano tra la folla, si cimentano in danze sincronizzate e servono da bere. Da quanto si apprende da alcune fonti online, come The Verge, Tesla avrebbe in parte barato nel fare sfoggio di questi “droidi”, che erano in parte controllati da personale umano.
         </p>
     </div>
 
-    <footer style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <footer style="display: flex; justify-content: space-between; align-items: center; padding: 10px; ">
         <div id="copyright" style="flex: 1; text-align: center;">© 2024 Tech News - Tutti i diritti riservati.</div> 
         <div id="datetime" style="margin-left: auto;"></div>
     </footer>
- </div>
  
  <script>
      function updateDateTime() {
@@ -107,6 +134,6 @@
      // Chiamata iniziale per mostrare subito la data e l'ora
      updateDateTime();
  </script>
-
+</div>
 </body>
 </html>
