@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,6 +56,10 @@
 
     <div class="ultimora">
         <h2>Ultim'ora</h2>
+        <div th:each="notizia : ${notizia}">
+            <h3 th:text="${notizia.titolo}">Titolo notizia</h3>
+            <p th:text="${notizia.descrizione}">Descrizione notizia</p>
+        </div>
         <div>
             <h3>Sondaggio: gli europei non si fidano dell'IA nelle elezioni, ma dicono sì al riconoscimento facciale</h3>
             <p>Un sondaggio condotto dall'Università IE in dieci Paese mostra come gli europei abbiano poca fiducia nell'utilizzo dell'intelligenza artificiale per gestire il voto e come temano manipolazioni dei risultati.</p>
