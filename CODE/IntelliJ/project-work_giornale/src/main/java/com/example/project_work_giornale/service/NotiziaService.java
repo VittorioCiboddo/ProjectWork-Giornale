@@ -4,7 +4,6 @@ import com.example.project_work_giornale.model.Categoria;
 import com.example.project_work_giornale.model.Notizia;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 
