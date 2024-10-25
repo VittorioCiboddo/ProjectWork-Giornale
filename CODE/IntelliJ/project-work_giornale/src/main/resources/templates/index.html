@@ -88,9 +88,25 @@
         </p>
     </div>
 
-    <footer>
-        <p>© 2024 Tech News - Tutti i diritti riservati.</p>
+    <footer style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+        <div id="copyright" style="flex: 1; text-align: center;">© 2024 Tech News - Tutti i diritti riservati.</div> 
+        <div id="datetime" style="margin-left: auto;"></div>
     </footer>
-</div>
+ </div>
+ 
+ <script>
+     function updateDateTime() {
+         const now = new Date();
+         const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false };
+         document.getElementById('datetime').textContent = now.toLocaleString('it-IT', options);
+     }
+ 
+     // Aggiorna la data e l'ora ogni secondo
+     setInterval(updateDateTime, 1000);
+ 
+     // Chiamata iniziale per mostrare subito la data e l'ora
+     updateDateTime();
+ </script>
+
 </body>
 </html>

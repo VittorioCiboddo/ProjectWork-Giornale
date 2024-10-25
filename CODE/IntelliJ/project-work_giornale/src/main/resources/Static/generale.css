@@ -74,3 +74,13 @@ footer {
     margin-top: 20px;
 	clear: both;
 }
+
+#datetime {
+    float: right;
+    width: 28%;
+}
+
+#copyright{
+    text-align: center;
+    width: 70%;
+}
