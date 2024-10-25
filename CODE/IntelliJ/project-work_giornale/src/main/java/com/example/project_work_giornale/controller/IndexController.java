@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/")
 public class IndexController {
 
-    //@Autowired
+    @Autowired
     private NotiziaService notiziaService;
 
     @GetMapping
