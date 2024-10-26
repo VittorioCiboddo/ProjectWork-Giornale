@@ -1,8 +1,12 @@
 package com.example.project_work_giornale.controller;
 
+import com.example.project_work_giornale.model.Admin;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 // localhost:8080/areaadmin
 @Controller
@@ -10,7 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AreaAdminController {
 
     @GetMapping
-    public String getPage() {
+    public String getPage(HttpSession session, Model model) {
+        if (session.getAttribute("admin") == null)
+            return "redirect:/loginadmin";
+        Admin admin = (Admin) session.getAttribute("admin");
+        model.addAttribute("admin", admin);
         return "area-admin";
     }
 }
