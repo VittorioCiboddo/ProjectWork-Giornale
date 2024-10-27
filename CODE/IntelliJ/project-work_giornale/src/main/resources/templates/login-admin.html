@@ -13,6 +13,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      position: relative; /* Aggiunto per il posizionamento del pulsante */
     }
 
     .login-container {
@@ -57,9 +58,26 @@
       text-align: center;
       margin-bottom: 15px;
     }
+
+    .exit-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #f44336; /* Rosso */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    .exit-button:hover {
+      background-color: #e53935; /* Rosso scuro */
+    }
   </style>
 </head>
 <body>
+<button class="exit-button" onclick="window.location.href='/'">Esci</button>
 <div class="login-container">
   <h2>Login Admin</h2>
   <p class="error-message" th:if="${error}">Credenziali Errate</p>

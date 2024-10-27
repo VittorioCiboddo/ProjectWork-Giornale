@@ -1,152 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorial</title>
 
-
-    <!-- collegamento a Bootstrap -->
+    <!-- Collegamento a Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Includi lo script Bootstrap bundle (includendo Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
+    <!-- Includo Bootstrap Icons per richiamare le icone dei social media -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 
     <link href="generale.css" rel="stylesheet">
+
+    <style>
+        .no-wrap {
+            display: flex;
+            /* Rende il contenuto del div un contenitore flessibile */
+            justify-content: center;
+            /* Centra il contenuto orizzontalmente */
+            white-space: nowrap;
+            /* Impedisce al testo di andare a capo */
+        }
+    </style>
 
 </head>
 
 <body>
 
-<div class="container-fluid">
-    <header>
-        <h1>Tech News</h1>
+<div class="container-fluid main-container">
+    <!-- Header stilizzato come sito giornalistico -->
+    <header class="d-flex justify-content-center align-items-center p-3 bg-dark shadow-sm rounded">
+        <img src="/images/logo.png" alt="Logo" class="logo me-3">
+        <h1 class="site-title">Tech News Daily</h1>
     </header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary dropdown">
 
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-bs-toggle="dropdown" aria-expanded="false">
-                    Notizie
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="notizie.html">Tutte le notizie</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="intelligenza-artificiale.html">Intelligenza Artificiale</a>
-                    <a class="dropdown-item" href="cybersecurity.html">Cybersecurity</a>
-                    <a class="dropdown-item" href="gadget.html">Gadget</a>
-                    <a class="dropdown-item" href="innovazioni.html">Innovazioni</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="tutorial.html">Tutorial</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="recensioni.html">Recensioni</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contatti.html">Contatti</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="eventi.html">Eventi</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="area-admin.html">Area Admin</a>
-            </li>
-        </ul>
+    <!-- Navbar sotto l'header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary mt-3 sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Notizie
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/notizie">Tutte le notizie</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="intelligenza-artificiale.html">Intelligenza
+                                Artificiale</a></li>
+                            <li><a class="dropdown-item" href="cybersecurity.html">Cybersecurity</a></li>
+                            <li><a class="dropdown-item" href="gadget.html">Gadget</a></li>
+                            <li><a class="dropdown-item" href="innovazioni.html">Innovazioni</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tutorial">Tutorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/recensioni">Recensioni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contatti">Contatti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eventi">Eventi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/loginadmin">Area Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
+    <!-- Contenuto principale -->
+    <div class="main-content d-flex mt-5">
+        <!-- HO COMMENTATO QUA PERCHE' BISOGNA DECIDERE SE IL BANNER SI DEBBA VEDERE QUI,
+         COSI' COME IL MENU' LATERALE A SINISTRA -->
+        <!--<div class="ultimora">
+            <h2>Ultim'ora</h2>
+            <div th:each="notizia : ${notizia}">
+                <h3 th:text="${notizia.titolo}">Titolo notizia</h3>
+                <p th:text="${notizia.descrizione}">Descrizione notizia</p>
+            </div>
+            <hr>
+            <h4>Sondaggio: gli europei non si fidano dell'IA nelle elezioni, ma dicono sì al riconoscimento facciale
+            </h4>
+            <hr>
+            <h4>Radio, i 100 anni in Italia da Marconi alla rivoluzione digitale</h4>
+            <hr>
+            <h4>Clementoni lancia il primo robot giocattolo dotato di intelligenza artificiale</h4>
+            <hr>
+            <h4>Pokémon colpito da un enorme attacco hacker: Game Freak conferma il furto dati</h4>
 
-    <div class="ultimora">
-        <h2>-titolo da scegliere-</h2>
-        <div id="link" class="linkz">
-            <ul>
-                <li><a href="#tec">Tecnologia e terza età: come iniziare</a></li>
-                <li><a href="#int">Internet sicuro per tutti: come usare la vpn</a></li>
-                <li><a href="#pc">Scopri il potenziale del tuo PC</a></li>
-            </ul>
+            <div id="contenitore-foto" style="margin-top: 100%;"></div>
+
+
+            &lt;!&ndash;script per il banner pubbicità&ndash;&gt;
+            <script>
+
+                const banner = [
+                    { nome: "m4f", src: "/images/m4f.png" },
+                    { nome: "just", src: "/images/just.png" },
+                    { nome: "bio", src: "/images/bio.png" },
+                    { nome: "vintage", src: "/images/vintage.png" },
+                ];
+
+                const contenitoreFoto = document.getElementById('contenitore-foto');
+                let indiceCorrente = -1;
+
+                // Funzione per visualizzare la foto del banner
+                function visualizzaFoto(indice) {
+                    if (indice >= 0 && indice < banner.length) {
+                        indiceCorrente = indice;
+                        contenitoreFoto.innerHTML = '<img src="' + banner[indice].src + '" alt="' + banner[indice].nome + '"style="height: auto; max-width: 100%">';
+                    }
+                }
+
+                // Scorrimento automatico delle foto
+                function scorrimentoAutomatico() {
+                    setInterval(function () {
+                        indiceCorrente = (indiceCorrente + 1) % banner.length;
+                        visualizzaFoto(indiceCorrente);
+                    }, 3000); // Cambia immagine ogni 3 secondi
+                }
+
+                // Inizializzazione dello scorrimento automatico
+                scorrimentoAutomatico();
+
+            </script>
+
+        </div>-->
+
+        <div class="main-article">
+            <!-- HO COMMENTATO QUA IN ATTESA DI CARICARE IL VERO CONTENUTO DI tutorial -->
+            <!--<h2 class="front-page-title">I robot Optimus Gen 2 di Tesla all’evento Cybercab sono agili, ma sono
+                autonomi? Cosa possono fare</h2>
+            <img src="/images/tesla.jpg" alt="Immagine dell'articolo" class="img-fluid front-page-image">
+            <p>
+                I robot umanoidi Optimus Gen 2 di Tesla presentati da Elon Musk all'evento Cybercab camminano, danzano, servono da bere e interagiscono con le persone. Anche se, a detta di alcuni, non erano del tutto autonomi.
+                Elon Musk intende produrli in massa per renderli disponibili a prezzi di 20-30.000 dollari. Un gruppo di robot umanoidi Optimus Gen 2 prodotti da Tesla, l'azienda automobilistica di Elon Musk, ha sfilato a Los Angeles durante l'evento Cybercab dedicato alla presentazione del nuovo Tesla Robovan (una sorta di navetta a guida autonoma).
+                Musk ha approfittato dell'occasione per elogiare le capacità dei suoi robot, sottolineando quanto siano avanzate rispetto al primo prototipo mostrato in pubblico nel 2022. Oggi i robot Optimus possono camminare, svolgere attività quotidiane come portare pacchi o irrigare piante, e persino interagire con le persone: a vederli sembrano in grado di per svolgere compiti domestici.
+                I video diffusi mostrano robot che camminano tra la folla, si cimentano in danze sincronizzate e servono da bere. Da quanto si apprende da alcune fonti online, come The Verge, Tesla avrebbe in parte barato nel fare sfoggio di questi “droidi”, che erano in parte controllati da personale umano.
+            </p>-->
         </div>
     </div>
 
-    <div class="main-article">
-        <div id="tec">
-            <h1>Tecnologia e terza età: come iniziare</h1>
-            <p>Oggi la tecnologia è una risorsa preziosa anche per le persone anziane, offrendo nuove opportunità di
-                comunicazione, informazione e intrattenimento. Per iniziare, è importante partire da dispositivi
-                semplici come smartphone o tablet, che permettono di accedere a internet con facilità.
-                Le videochiamate con familiari e amici, ad esempio, sono un ottimo modo per mantenere i contatti,
-                utilizzando applicazioni come WhatsApp o Skype. Imparare a navigare sul web permette di leggere
-                notizie, fare acquisti online e usufruire di servizi digitali.
-                Un altro aspetto fondamentale è la sicurezza: è importante riconoscere i rischi e seguire consigli
-                per navigare in modo sicuro, come non condividere informazioni personali con estranei.
-                Con un po' di pratica, la tecnologia può diventare un valido alleato per la vita quotidiana.</p>
+    <footer class="footer bg-dark text-white py-4" style="margin-top: 60px;">
+        <div class="container">
+            <div class="row">
+                <!-- Logo e descrizione -->
+                <div class="col-md-4">
+                    <h5 class="mb-3">Tech News</h5>
+                    <p>
+                        Il tuo giornale di riferimento per tutte le ultime notizie su tecnologia, innovazione e
+                        informatica.
+                    </p>
+                </div>
+
+                <!-- Link utili -->
+                <div class="col-md-2">
+                    <h5 class="mb-3">Link utili</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/notizie" class="text-white">Notizie</a></li>
+                        <li><a href="/tutorial" class="text-white">Tutorial</a></li>
+                        <li><a href="/recensioni" class="text-white">Recensioni</a></li>
+                        <li><a href="/eventi" class="text-white">Eventi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contatti -->
+                <div class="col-md-3">
+                    <h5 class="mb-3">Contattaci</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="mailto:info@technews.com" class="text-white">info@technews.com</a></li>
+                        <li><a href="tel:+390123456789" class="text-white">+39 012 345 6789</a></li>
+                        <li><a href="/contatti" class="text-white">Modulo di contatto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="col-md-3">
+                    <h5 class="mb-3">Seguici</h5>
+                    <div>
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4" style="display: flex; align-items: center; justify-content: space-between;">
+                <div class="col no-wrap"> <!-- Aggiungi la classe .no-wrap -->
+                    <p class="mb-0">
+                        <a href="#" class="text-white">Privacy Policy</a> |
+                        <a href="#" class="text-white">Termini di servizio</a>
+                    </p>
+                </div>
+                <div class="col no-wrap" style="padding-left: 50px;"> <!-- Aggiungi la classe .no-wrap -->
+                    <p class="mb-0">&copy; 2024 Tech News - Tutti i diritti riservati</p>
+                </div>
+                <div class="col text-right" style="padding-left: 50px;">
+                    <p id="datetime"></p> <!-- Elemento per la data e l'ora -->
+                </div>
+            </div>
+
         </div>
-
-        <div id="int">
-            <h1>Internet sicuro per tutti: come usare la VPN</h1>
-
-            <p>Navigare su Internet in modo sicuro è fondamentale per proteggere la propria privacy e i dati
-                personali. Un modo efficace per farlo è usare una VPN (Virtual Private Network). La VPN crea una
-                connessione crittografata tra il tuo dispositivo e il server VPN, nascondendo il tuo indirizzo IP e
-                proteggendo le tue informazioni da occhi indiscreti.
-
-                Per usare una VPN, segui questi passaggi:
-
-                Scegli una VPN affidabile: Esistono vari servizi gratuiti e a pagamento, come NordVPN, ExpressVPN o
-                ProtonVPN.
-                Scarica e installa l'app: Disponibili per PC, smartphone e tablet.
-                Accedi all'app: Dopo la registrazione, apri l'app e inserisci le tue credenziali.
-                Connetti al server VPN: Scegli un server da un paese a tua scelta. Una volta connesso, la tua
-                attività sarà protetta.
-                La VPN non solo protegge i tuoi dati, ma ti consente anche di accedere a contenuti bloccati nella
-                tua area. Usarla regolarmente è un passo importante per una navigazione sicura e consapevole.</p>
-
-        </div>
-        <div id="pc">
-            <h1>Scopri il potenziale del tuo PC</h1>
-            <p>Il tuo PC è uno strumento potente che, se usato correttamente, può semplificare molte attività
-                quotidiane e potenziare la tua produttività. Oltre a navigare su internet e inviare email, il PC
-                offre una vasta gamma di funzionalità utili.
-
-                Ad esempio, puoi sfruttare applicazioni di produttività come Microsoft Office o Google Docs per
-                creare documenti, fogli di calcolo e presentazioni professionali. Puoi anche organizzare le tue
-                finanze, seguendo spese e budget con software dedicati come Excel o Money Manager.
-
-                Se ti piace il mondo della creatività, il tuo PC può diventare una piattaforma per editing video,
-                creazione di grafica con programmi come Photoshop o GIMP, o per la produzione musicale.
-
-                Inoltre, tenere il PC aggiornato con le ultime versioni del sistema operativo e dei programmi
-                garantisce migliori prestazioni e sicurezza. Esplorando software diversi e ottimizzando le
-                impostazioni, scoprirai che il tuo PC ha molto più potenziale di quanto tu possa immaginare!</p>
-        </div>
-    </div>
-
-    <footer style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
-        <div id="copyright" style="flex: 1; text-align: center;">© 2024 Tech News - Tutti i diritti riservati.</div> 
-        <div id="datetime" style="margin-left: auto;"></div>
     </footer>
+
+    <!-- Script footer data/ora -->
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false };
+            document.getElementById('datetime').textContent = now.toLocaleString('it-IT', options);
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+
+    <!-- Popper.js, necessario per il dropdown di Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz4fnFO9gybBogGzFg6Z7C19p7E6huP5BBOv4YBBTVz6k7I1E2ErEsMkF6"
+            crossorigin="anonymous">
+
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous">
+
+    </script>
+
 </div>
-
-<script>
-    function updateDateTime() {
-        const now = new Date();
-        const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false };
-        document.getElementById('datetime').textContent = now.toLocaleString('it-IT', options);
-    }
-
-    // Aggiorna la data e l'ora ogni secondo
-    setInterval(updateDateTime, 1000);
-
-    // Chiamata iniziale per mostrare subito la data e l'ora
-    updateDateTime();
-</script>
-
 </body>
 
 </html>

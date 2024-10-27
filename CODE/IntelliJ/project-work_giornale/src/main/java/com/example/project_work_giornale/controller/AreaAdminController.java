@@ -21,4 +21,11 @@ public class AreaAdminController {
         model.addAttribute("admin", admin);
         return "area-admin";
     }
+
+    // localhost:8080/areaadmin/logout
+    @GetMapping("/logout")
+    public String logoutAdmin(HttpSession session) {
+        session.removeAttribute("admin");
+        return "redirect:/loginadmin";
+    }
 }
