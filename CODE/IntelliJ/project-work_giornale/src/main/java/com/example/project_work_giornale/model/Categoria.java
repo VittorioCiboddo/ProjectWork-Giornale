@@ -2,6 +2,9 @@ package com.example.project_work_giornale.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "categoria")
 public class Categoria {
@@ -13,6 +16,13 @@ public class Categoria {
 
     @Column
     private String nome;
+
+    @OneToMany
+            (mappedBy = "categoria",
+            cascade = CascadeType.REMOVE,
+            fetch = FetchType.EAGER,
+            orphanRemoval = true)
+    private List<Evento> evento = new ArrayList<>();
 
     public int getIdCategoria() {
         return idCategoria;
@@ -28,5 +38,13 @@ public class Categoria {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<Evento> getEvento() {
+        return evento;
+    }
+
+    public void setEvento(List<Evento> evento) {
+        this.evento = evento;
     }
 }

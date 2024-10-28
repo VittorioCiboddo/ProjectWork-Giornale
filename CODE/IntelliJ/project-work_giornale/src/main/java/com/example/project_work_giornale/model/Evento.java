@@ -22,8 +22,11 @@ public class Evento {
 
     @Column(name = "data_evento")
     private LocalDateTime dataEvento;
+    @Transient // Questo campo non sarà persistito nel DB
+    private String dataEventoString; // campo per la stringa formattata
 
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "fk_id_categoria", referencedColumnName = "id_categoria")
     private Categoria categoria;
 
@@ -57,6 +60,14 @@ public class Evento {
 
     public void setDataEvento(LocalDateTime dataEvento) {
         this.dataEvento = dataEvento;
+    }
+
+    public String getDataEventoString() {
+        return dataEventoString;
+    }
+
+    public void setDataEventoString(String dataEventoString) {
+        this.dataEventoString = dataEventoString;
     }
 
     public Categoria getCategoria() {

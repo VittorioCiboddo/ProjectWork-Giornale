@@ -38,7 +38,7 @@ header {
 .logo {
     position: absolute;
     left: 20px; /* Mantiene il logo a sinistra */
-    width: 100px;
+    width: 110px;
     height: auto;
     border-radius: 55px;
     box-shadow: 22px 8px 57px rgb(1 56 255);
@@ -101,7 +101,6 @@ nav.navbar a:hover {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-align: justify;
     margin-top: 25px;
 }
 

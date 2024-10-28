@@ -28,4 +28,6 @@ public class AreaAdminController {
         session.removeAttribute("admin");
         return "redirect:/loginadmin";
     }
+
+
 }
