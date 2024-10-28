@@ -23,13 +23,63 @@
     <style>
         .no-wrap {
             display: flex;
-            /* Rende il contenuto del div un contenitore flessibile */
             justify-content: center;
-            /* Centra il contenuto orizzontalmente */
             white-space: nowrap;
-            /* Impedisce al testo di andare a capo */
+        }
+
+        <!--.servizio-container {
+            display: flex;
+            flex-direction: column; /* Modificato per allineare il titolo e il sottotitolo in colonna */
+            justify-content: center; /* Centra orizzontalmente il contenuto */
+            align-items: center; /* Centra verticalmente il contenuto */
+            flex-wrap: wrap; /* Permette l'impacchettamento su più righe se necessario */
+            height: auto; /* Altezza automatica per contenere il contenuto */
+            margin-bottom: 20px; /* Aggiunto margine in fondo per distanziare dal contenuto successivo */
+        }-->
+
+        .contact-section {
+            max-width: 600px;
+            text-align: left;
+            margin: 0 auto; /* Centro il contenitore */
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white; /* Aggiunto sfondo bianco */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Aggiunta ombra per il contenitore */
+        }
+
+
+        .contact-section h2 {
+            margin-top: 20px;
+            color: #007bff;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+
+        .contact-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-section li {
+            padding: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        #contatti_pic {
+            width: 100%; /* Imposta la larghezza al 100% del contenitore */
+            height: auto; /* Permette di mantenere le proporzioni */
+            object-fit: cover; /* Assicura che l'immagine si adatti senza deformazione */
+            margin-bottom: 20px; /* Distanza inferiore per separarla dal testo */
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column; /* Cambiato per stack verticale */
+            align-items: center; /* Centrato il contenuto */
         }
     </style>
+
 
 </head>
 
@@ -94,75 +144,35 @@
 
     <!-- Contenuto principale -->
     <div class="main-content d-flex mt-5">
-        <!-- HO COMMENTATO QUA PERCHE' NON PENSO CHE IL BANNER SI DEBBA VEDERE QUI,
-         COSI' COME IL MENU' LATERALE A SINISTRA -->
-        <!--<div class="ultimora">
-            <h2>Ultim'ora</h2>
-            <div th:each="notizia : ${notizia}">
-                <h3 th:text="${notizia.titolo}">Titolo notizia</h3>
-                <p th:text="${notizia.descrizione}">Descrizione notizia</p>
-            </div>
-            <hr>
-            <h4>Sondaggio: gli europei non si fidano dell'IA nelle elezioni, ma dicono sì al riconoscimento facciale
-            </h4>
-            <hr>
-            <h4>Radio, i 100 anni in Italia da Marconi alla rivoluzione digitale</h4>
-            <hr>
-            <h4>Clementoni lancia il primo robot giocattolo dotato di intelligenza artificiale</h4>
-            <hr>
-            <h4>Pokémon colpito da un enorme attacco hacker: Game Freak conferma il furto dati</h4>
 
-            <div id="contenitore-foto" style="margin-top: 100%;"></div>
+        <div class="contact-section">
+            <h2 style="text-align: center;"><strong>Contattaci</strong> </h2>
+            <p style="text-align: center;">Tutti i contatti dell'assistenza clienti</p>
+            <img src="/images/applicazioni-sofware.jpg" alt="applicazioni-sofware" id="contatti_pic" />
 
-
-            &lt;!&ndash;script per il banner pubbicità&ndash;&gt;
-            <script>
-
-                const banner = [
-                    { nome: "m4f", src: "/images/m4f.png" },
-                    { nome: "just", src: "/images/just.png" },
-                    { nome: "bio", src: "/images/bio.png" },
-                    { nome: "vintage", src: "/images/vintage.png" },
-                ];
-
-                const contenitoreFoto = document.getElementById('contenitore-foto');
-                let indiceCorrente = -1;
-
-                // Funzione per visualizzare la foto del banner
-                function visualizzaFoto(indice) {
-                    if (indice >= 0 && indice < banner.length) {
-                        indiceCorrente = indice;
-                        contenitoreFoto.innerHTML = '<img src="' + banner[indice].src + '" alt="' + banner[indice].nome + '"style="height: auto; max-width: 100%">';
-                    }
-                }
-
-                // Scorrimento automatico delle foto
-                function scorrimentoAutomatico() {
-                    setInterval(function () {
-                        indiceCorrente = (indiceCorrente + 1) % banner.length;
-                        visualizzaFoto(indiceCorrente);
-                    }, 3000); // Cambia immagine ogni 3 secondi
-                }
-
-                // Inizializzazione dello scorrimento automatico
-                scorrimentoAutomatico();
-
-            </script>
-
-        </div>-->
-
-        <div class="main-article">
-            <!-- HO COMMENTATO QUA IN ATTESA DI CARICARE IL VERO CONTENUTO DI contatti -->
-            <!--<h2 class="front-page-title">I robot Optimus Gen 2 di Tesla all’evento Cybercab sono agili, ma sono
-                autonomi? Cosa possono fare</h2>
-            <img src="/images/tesla.jpg" alt="Immagine dell'articolo" class="img-fluid front-page-image">
-            <p>
-                I robot umanoidi Optimus Gen 2 di Tesla presentati da Elon Musk all'evento Cybercab camminano, danzano, servono da bere e interagiscono con le persone. Anche se, a detta di alcuni, non erano del tutto autonomi.
-                Elon Musk intende produrli in massa per renderli disponibili a prezzi di 20-30.000 dollari. Un gruppo di robot umanoidi Optimus Gen 2 prodotti da Tesla, l'azienda automobilistica di Elon Musk, ha sfilato a Los Angeles durante l'evento Cybercab dedicato alla presentazione del nuovo Tesla Robovan (una sorta di navetta a guida autonoma).
-                Musk ha approfittato dell'occasione per elogiare le capacità dei suoi robot, sottolineando quanto siano avanzate rispetto al primo prototipo mostrato in pubblico nel 2022. Oggi i robot Optimus possono camminare, svolgere attività quotidiane come portare pacchi o irrigare piante, e persino interagire con le persone: a vederli sembrano in grado di per svolgere compiti domestici.
-                I video diffusi mostrano robot che camminano tra la folla, si cimentano in danze sincronizzate e servono da bere. Da quanto si apprende da alcune fonti online, come The Verge, Tesla avrebbe in parte barato nel fare sfoggio di questi “droidi”, che erano in parte controllati da personale umano.
-            </p>-->
+            <h2><strong>Redazione e Proposte Editoriali</strong></h2>
+            <p> Un'idea per un articolo o vuoi segnalarci una notizia interessante? Inviaci una mail, il nostro team editoriale valuterà con piacere ogni suggerimento!</p>
+            <ul>
+                <li>📧 Email: redazione@technews.com</li>
+                <li>📞Telefono: +39 0123 456 789 (Lun-Ven, 9:00-17:00) </li>
+                <h2><strong> Pubblicità e Sponsorizzazioni</strong></h2>
+                <p>Se sei un’azienda o un professionista e desideri collaborare con noi per pubblicità, articoli sponsorizzati o partnership, contattaci:</p>
+                <li>📧 Email: pubblicita@technews.com</li>
+                <li>📞 Telefono: +39 0987 654 321 (Lun-Ven, 9:00-17:00)</li>
+                <h2><strong>Assistenza Tecnica</strong></h2>
+                <p>Hai riscontrato problemi tecnici sul nostro sito? Il nostro team di supporto è qui per aiutarti.</p>
+                <li>📧 Email: supporto@technews.com</li>
+                <li>📞 Telefono: +39 0456 789 012 (Lun-Ven, 9:00-18:00)</li>
+                <h2><strong>Sede Fisica</strong></h2>
+                <p>Puoi trovarci presso la nostra sede per qualsiasi richiesta o incontro dal vivo.</p>
+                <ul>
+                    <li>📍 Indirizzo: Via Piave 8, 00187 Roma</li>
+                    <li>⏰ Orari: Lun-Ven, 9:00-18:00</li>
+                    <li>📞 Telefono: +39 0123 456 789</li>
+                </ul>
+            </ul>
         </div>
+
     </div>
 
     <footer class="footer bg-dark text-white py-4" style="margin-top: 60px;">
