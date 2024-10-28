@@ -1,7 +1,6 @@
 package com.example.project_work_giornale.service;
 
 import com.example.project_work_giornale.dao.NotiziaDao;
-import com.example.project_work_giornale.model.Categoria;
 import com.example.project_work_giornale.model.Notizia;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +14,9 @@ public class NotiziaServiceImpl implements NotiziaService{
 
     @Autowired
     private NotiziaDao notiziaDao;
+
+    @Autowired
+    private CategoriaService categoriaService;
 
     @Override
     public List<Notizia> elencoNotizia() {
@@ -31,12 +33,11 @@ public class NotiziaServiceImpl implements NotiziaService{
     }
 
     @Override
-    public void aggiungiNotizia(Notizia notizia, String titolo, String descrizione, LocalDate dataPubblicazione, String immagine, String linkVideo, Categoria categoria) {
+    public void aggiungiNotizia(Notizia notizia, String titolo, String descrizione, LocalDate dataPubblicazione, String immagine, String linkVideo, int idCategoria) {
         notizia.setTitolo(titolo);
         notizia.setDescrizione(descrizione);
-        notizia.setCategoria(categoria);
+        notizia.setCategoria(categoriaService.datiCategoria(idCategoria));
         notizia.setDataPubblicazione(dataPubblicazione);
-        notizia.setLinkVideo(linkVideo);
     }
 
     @Override

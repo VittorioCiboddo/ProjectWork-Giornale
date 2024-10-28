@@ -56,9 +56,7 @@ public class Notizia {
         this.descrizione = descrizione;
     }
 
-    public LocalDate getDataPubblicazione() {
-        return dataPubblicazione;
-    }
+    public LocalDate getDataPubblicazione() { return dataPubblicazione; }
 
     public void setDataPubblicazione(LocalDate dataPubblicazione) {
         this.dataPubblicazione = dataPubblicazione;
@@ -84,7 +82,5 @@ public class Notizia {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
+    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
 }
