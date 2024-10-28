@@ -98,7 +98,7 @@
             <h2>Ultim'ora</h2>
             <div th:each="notizia : ${notizia}">
                 <h3 th:text="${notizia.titolo}">Titolo notizia</h3>
-                <p th:text="${notizia.descrizione}">Descrizione notizia</p>
+                <p th:text="${#strings.abbreviate(notizia.descrizione, 100)}">Descrizione notizia</p>
             </div>
             <hr>
             <h4>Sondaggio: gli europei non si fidano dell'IA nelle elezioni, ma dicono sì al riconoscimento facciale
