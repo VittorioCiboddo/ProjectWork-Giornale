@@ -29,6 +29,16 @@
             white-space: nowrap;
             /* Impedisce al testo di andare a capo */
         }
+
+               /* Effetto hover per ingrandire leggermente le card */
+        .card-hover {
+            transition: transform 0.3s;
+            border-radius: 15px;
+         }
+
+        .card-hover:hover {
+            transform: scale(1.05);
+        }
     </style>
 
 </head>
@@ -93,76 +103,73 @@
     </nav>
 
     <!-- Contenuto principale -->
-    <div class="main-content d-flex mt-5">
-        <!-- HO COMMENTATO QUA PERCHE' NON PENSO CHE IL BANNER SI DEBBA VEDERE QUI,
-         COSI' COME IL MENU' LATERALE A SINISTRA -->
-        <!--<div class="ultimora">
-            <h2>Ultim'ora</h2>
-            <div th:each="notizia : ${notizia}">
-                <h3 th:text="${notizia.titolo}">Titolo notizia</h3>
-                <p th:text="${notizia.descrizione}">Descrizione notizia</p>
+    <div class="main-content d-flex flex-wrap mt-5" style="justify-content: space-around;">
+
+        <!-- Card 1 -->
+        <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
+            <div class="card m-3 card-hover" style="display: block;">
+                <img src="/images/Card1.jpg" class="card-img-top rounded" alt="Evento 1">
+                <div class="card-body">
+                    <h5 class="card-title">14 e 15 Febbraio AI Festival – Allianz MiCo, Milano</h5>
+                    <p class="card-text">Festival Internazionale dedicato al mondo dell’Intelligenza Artificiale. L’evento riunirà professionisti, aziende, startup e stakeholder per discutere e approfondire la rivoluzione apportata dall’AI non solo nel quotidiano, ma anche in ambito politico, sociale e lavorativo. Sotto la lente della due giorni anche le diverse industries particolarmente interessate dalla rivoluzione dell’AI, come martech, health, education, work e tanto altro ancora. </p>
+                </div>
             </div>
-            <hr>
-            <h4>Sondaggio: gli europei non si fidano dell'IA nelle elezioni, ma dicono sì al riconoscimento facciale
-            </h4>
-            <hr>
-            <h4>Radio, i 100 anni in Italia da Marconi alla rivoluzione digitale</h4>
-            <hr>
-            <h4>Clementoni lancia il primo robot giocattolo dotato di intelligenza artificiale</h4>
-            <hr>
-            <h4>Pokémon colpito da un enorme attacco hacker: Game Freak conferma il furto dati</h4>
+        </a>
 
-            <div id="contenitore-foto" style="margin-top: 100%;"></div>
-
-
-            &lt;!&ndash;script per il banner pubbicità&ndash;&gt;
-            <script>
-
-                const banner = [
-                    { nome: "m4f", src: "/images/m4f.png" },
-                    { nome: "just", src: "/images/just.png" },
-                    { nome: "bio", src: "/images/bio.png" },
-                    { nome: "vintage", src: "/images/vintage.png" },
-                ];
-
-                const contenitoreFoto = document.getElementById('contenitore-foto');
-                let indiceCorrente = -1;
-
-                // Funzione per visualizzare la foto del banner
-                function visualizzaFoto(indice) {
-                    if (indice >= 0 && indice < banner.length) {
-                        indiceCorrente = indice;
-                        contenitoreFoto.innerHTML = '<img src="' + banner[indice].src + '" alt="' + banner[indice].nome + '"style="height: auto; max-width: 100%">';
-                    }
-                }
-
-                // Scorrimento automatico delle foto
-                function scorrimentoAutomatico() {
-                    setInterval(function () {
-                        indiceCorrente = (indiceCorrente + 1) % banner.length;
-                        visualizzaFoto(indiceCorrente);
-                    }, 3000); // Cambia immagine ogni 3 secondi
-                }
-
-                // Inizializzazione dello scorrimento automatico
-                scorrimentoAutomatico();
-
-            </script>
-
-        </div>-->
-
-        <div class="main-article">
-            <!-- HO COMMENTATO QUA IN ATTESA DI CARICARE IL VERO CONTENUTO DI eventi -->
-            <!--<h2 class="front-page-title">I robot Optimus Gen 2 di Tesla all’evento Cybercab sono agili, ma sono
-                autonomi? Cosa possono fare</h2>
-            <img src="/images/tesla.jpg" alt="Immagine dell'articolo" class="img-fluid front-page-image">
-            <p>
-                I robot umanoidi Optimus Gen 2 di Tesla presentati da Elon Musk all'evento Cybercab camminano, danzano, servono da bere e interagiscono con le persone. Anche se, a detta di alcuni, non erano del tutto autonomi.
-                Elon Musk intende produrli in massa per renderli disponibili a prezzi di 20-30.000 dollari. Un gruppo di robot umanoidi Optimus Gen 2 prodotti da Tesla, l'azienda automobilistica di Elon Musk, ha sfilato a Los Angeles durante l'evento Cybercab dedicato alla presentazione del nuovo Tesla Robovan (una sorta di navetta a guida autonoma).
-                Musk ha approfittato dell'occasione per elogiare le capacità dei suoi robot, sottolineando quanto siano avanzate rispetto al primo prototipo mostrato in pubblico nel 2022. Oggi i robot Optimus possono camminare, svolgere attività quotidiane come portare pacchi o irrigare piante, e persino interagire con le persone: a vederli sembrano in grado di per svolgere compiti domestici.
-                I video diffusi mostrano robot che camminano tra la folla, si cimentano in danze sincronizzate e servono da bere. Da quanto si apprende da alcune fonti online, come The Verge, Tesla avrebbe in parte barato nel fare sfoggio di questi “droidi”, che erano in parte controllati da personale umano.
-            </p>-->
+    <!-- Card 2 -->
+    <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
+        <div class="card m-3 card-hover">
+            <img src="/images/Card2.jpg" class="card-img-top rounded" alt="Evento 2">
+            <div class="card-body">
+                <h5 class="card-title">28 e 29 febbraio  CYBERSECURITY SUMMIT 2024 – NH Collection Milano CityLife</h5>
+                <p class="card-text">Cybersecurity 5.0: Interconnessa, sostenibile, Human centric. Il CYBERSECURITY SUMMIT di TIG – The Innovation Group è il principale evento italiano in cui, insieme ai maggiori esperti italiani e internazionali, si fa il punto sugli sviluppi chiave della sicurezza informatica e sulle nuove sfide che interessano organizzazioni pubbliche e private.</p>
+            </div>
         </div>
+    </a>
+
+    <!-- Card 3 -->
+    <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
+        <div class="card m-3 card-hover">
+            <img src="/images/Card3.jpg" class="card-img-top rounded" alt="Evento 3">
+            <div class="card-body">
+                <h5 class="card-title">28 febbraio Sicurezza ICT Milano (Roadshow)</h5>
+                <p class="card-text">Torna il 28 Febbraio a Milano il roadshow Sicurezza ICT Il programma di incontri territoriali offre un’occasione di incontro e confronto fra domanda e offerta di soluzioni per la Security e la protezione delle informazioni aziendali. Scopri le altre città e il Programma dell’evento.</p>
+            </div>
+        </div>
+    </a>
+
+    <!-- Card 4 -->
+    <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
+        <div class="card m-3 card-hover">
+            <img src="/images/Card4.jpg" class="card-img-top rounded" alt="Evento 4">
+            <div class="card-body">
+                <h5 class="card-title">6 e 7 Marzo – Roma Cybersec 2024 – Roma</h5>
+                <p class="card-text">La Cybersecurity nell’era dell’AI. La Conferenza internazionale offre un approfondimento sulle evoluzioni tecnologiche e normative della cybersicurezza e un ampio focus sulle frontiere dell’intelligenza artificiale per la cybersecurity.</p>
+            </div>
+        </div>
+    </a>
+
+    <!-- Card 5 -->
+    <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
+        <div class="card m-3 card-hover">
+            <img src="/images/Card5.jpg" class="card-img-top rounded" alt="Evento 5">
+            <div class="card-body">
+                <h5 class="card-title">14 Marzo dxday – Bologna e online</h5>
+                <p class="card-text">La prima conferenza internazionale in Italia dedicata all’esperienza degli sviluppatori (DX/DevEx), con focus su temi come ambienti effimeri, intelligenza artificiale nella codifica, sviluppo remoto, progettazione API e altro ancora. Organizzato da GrUSP. </p>
+            </div>
+        </div>
+    </a>
+
+    <!-- Card 6 -->
+    <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
+        <div class="card m-3 card-hover">
+            <img src="/images/Card6.jpg" class="card-img-top rounded" alt="Evento 6">
+            <div class="card-body">
+                <h5 class="card-title">22 marzo Rome .NET Conference – Roma e online</h5>
+                <p class="card-text">E’ un evento online gratuito di un’intera giornata organizzato dalla DotNetCode Community per gli sviluppatori. L’argomento principale di quest’anno sarà .NET 8, ma verranno trattati anche molti altri argomenti sulle tecnologie e sui prodotti di sviluppo Microsoft (.NET, ASP.NET, AZURE, DevOps e altro…). La conferenza si terrà il prossimo 22 marzo e sarà possibile partecipare sia di persona che online.</p>
+            </div>
+        </div>
+    </a>
     </div>
 
     <footer class="footer bg-dark text-white py-4" style="margin-top: 60px;">
