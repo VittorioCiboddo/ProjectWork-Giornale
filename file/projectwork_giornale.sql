@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 29, 2024 alle 14:46
+-- Creato il: Ott 29, 2024 alle 15:32
 -- Versione del server: 10.1.8-MariaDB
 -- Versione PHP: 5.6.14
 
@@ -76,7 +76,7 @@ CREATE TABLE `evento` (
   `luogo` varchar(50) NOT NULL,
   `data_inizio` datetime NOT NULL,
   `data_fine` datetime NOT NULL,
-  `immagine` varchar(255) DEFAULT NULL,
+  `immagine` longtext,
   `fk_id_categoria` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -103,7 +103,7 @@ CREATE TABLE `notizia` (
   `titolo` varchar(150) NOT NULL,
   `descrizione` longtext NOT NULL,
   `data_pubblicazione` date NOT NULL,
-  `immagine` varchar(255) DEFAULT NULL,
+  `immagine` longtext,
   `link_video` varchar(50) DEFAULT NULL,
   `fk_id_categoria` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
