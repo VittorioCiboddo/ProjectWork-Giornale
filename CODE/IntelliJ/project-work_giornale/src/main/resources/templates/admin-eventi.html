@@ -155,6 +155,7 @@
     <input type="text" name="luogo" placeholder="Luogo Evento" required th:value="${evento.luogo}">
     <input type="datetime-local" name="dataInizio" required th:value="${evento.dataInizio}">
     <input type="datetime-local" name="dataFine" required th:value="${evento.dataFine}">
+    <input type="file" name="immagine" accept="image/*" th:value="${evento.immagine}">
     <select name="categoria">
       <option value="" disabled selected>Scegli la categoria</option>
       <option th:each="categoria : ${categorie}" th:text="${categoria.nome}" th:value="${categoria.idCategoria}" th:selected="${evento.categoria != null && evento.categoria.idCategoria == categoria.idCategoria}"></option>
