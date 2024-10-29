@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 23, 2024 alle 10:56
+-- Creato il: Ott 29, 2024 alle 09:42
 -- Versione del server: 10.1.8-MariaDB
 -- Versione PHP: 5.6.14
 
@@ -61,9 +61,12 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nome`) VALUES
-(1, 'Tecnologia'),
-(2, 'Sport'),
-(3, 'Politica');
+(1, 'Robotica'),
+(2, 'Intelligenza Artificiale'),
+(3, 'Politica'),
+(4, 'Software'),
+(5, 'Hi-Tech'),
+(6, 'Sicurezza informatica');
 
 -- --------------------------------------------------------
 
@@ -95,10 +98,10 @@ INSERT INTO `evento` (`id_evento`, `nome`, `luogo`, `data_evento`, `fk_id_catego
 
 CREATE TABLE `notizia` (
   `id_notizia` int(11) NOT NULL,
-  `titolo` varchar(50) NOT NULL,
-  `descrizione` varchar(100) NOT NULL,
+  `titolo` varchar(100) NOT NULL,
+  `descrizione` longtext NOT NULL,
   `data_pubblicazione` date NOT NULL,
-  `immagine` varchar(100) NOT NULL,
+  `immagine` varchar(255) DEFAULT NULL,
   `link_video` varchar(50) DEFAULT NULL,
   `fk_id_categoria` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -108,7 +111,7 @@ CREATE TABLE `notizia` (
 --
 
 INSERT INTO `notizia` (`id_notizia`, `titolo`, `descrizione`, `data_pubblicazione`, `immagine`, `link_video`, `fk_id_categoria`) VALUES
-(1, 'Nuovo I-Phone', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n', '2024-10-10', 'Vivamus iaculis mi sed sagittis dignissim.', NULL, 1),
+(1, 'I robot Optimus Gen 2 di Tesla all’evento Cybercab sono agili, ma sono autonomi? Cosa possono fare', ' I robot umanoidi Optimus Gen 2 di Tesla presentati da Elon Musk all''evento Cybercab camminano, danzano, servono da bere e interagiscono con le persone. Anche se, a detta di alcuni, non erano del tutto autonomi. Elon Musk intende produrli in massa per renderli disponibili a prezzi di 20-30.000 dollari.\r\nUn gruppo di robot umanoidi Optimus Gen 2 prodotti da Tesla, l''azienda automobilistica di Elon Musk, ha sfilato a Los Angeles durante l''evento Cybercab dedicato alla presentazione del nuovo Tesla Robovan (una sorta di navetta a guida autonoma). Musk ha approfittato dell''occasione per elogiare le capacità dei suoi robot, sottolineando quanto siano avanzate rispetto al primo prototipo mostrato in pubblico nel 2022. Oggi i robot Optimus possono camminare, svolgere attività quotidiane come portare pacchi o irrigare piante, e persino interagire con le persone: a vederli sembrano in grado di per svolgere compiti domestici. I video diffusi mostrano robot che camminano tra la folla, si cimentano in danze sincronizzate e servono da bere. Da quanto si apprende da alcune fonti online, come The Verge, Tesla avrebbe in parte barato nel fare sfoggio di questi “droidi”, che erano in parte controllati da personale umano.', '2024-10-10', 'images/tesla.jpg', NULL, 1),
 (2, 'Nuovo libro Tolkien generato da IA', 'Phasellus eu diam quis dui ornare semper eu non metus. Suspendisse ut mauris sit amet nulla dignissi', '2024-08-15', 'Maecenas ultrices ultricies elit eget egestas.', NULL, 1),
 (3, 'L''I.A. al VAR: via libera dalla FIFA dal 2025', 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.', '2024-07-17', 'Vivamus ornare consectetur finibus. ', NULL, 2);
 
@@ -156,7 +159,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT per la tabella `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT per la tabella `evento`
 --
