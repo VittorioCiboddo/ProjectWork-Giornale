@@ -149,7 +149,7 @@
   <form action="/adminnotizie" method="post" enctype="multipart/form-data">
     <input type="text" name="titolo" placeholder="Titolo notizia" required th:value="${notizia.titolo}">
     <input type="text" name="descrizione" placeholder="Descrizione" required th:value="${notizia.descrizione}">
-    <input type="text" name="immagine" placeholder="Immagine" th:value="${notizia.immagine}">
+    <input type="file" name="immagine" accept="image/*" th:value="${notizia.immagine}">
     <input type="text" name="linkVideo" placeholder="Link video" th:value="${notizia.linkVideo}">
     <input type="date" name="dataPubblicazione" required th:value="${notizia.dataPubblicazione}">
     <select name="categoria">

@@ -53,7 +53,7 @@ public class AdminNotiziaController {
     public String formManager(@RequestParam("titolo") String titolo,
                               @RequestParam("descrizione") String descrizione,
                               @RequestParam("dataPubblicazione") LocalDate dataPubblicazione,
-                              @RequestParam("immagine") String immagine,
+                              @RequestParam("immagine") MultipartFile immagine,
                               @RequestParam("linkVideo") String linkVideo,
                               @RequestParam("categoria") int idCategoria) {
         notiziaService.aggiungiNotizia(notizia, titolo, descrizione, dataPubblicazione, immagine, linkVideo, idCategoria);
