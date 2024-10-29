@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Creato il: Ott 29, 2024 alle 15:32
+=======
+-- Creato il: Ott 29, 2024 alle 15:30
+>>>>>>> 7c2ab90af45516df266871aefa2660f5ba3378ea
 -- Versione del server: 10.1.8-MariaDB
 -- Versione PHP: 5.6.14
 
