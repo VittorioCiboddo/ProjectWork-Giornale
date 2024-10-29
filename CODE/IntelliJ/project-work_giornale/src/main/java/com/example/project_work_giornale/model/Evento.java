@@ -20,10 +20,18 @@ public class Evento {
     @Column
     private String luogo;
 
-    @Column(name = "data_evento")
-    private LocalDateTime dataEvento;
+    @Column(name = "data_inizio")
+    private LocalDateTime dataInizio;
     @Transient // Questo campo non sarà persistito nel DB
-    private String dataEventoString; // campo per la stringa formattata
+    private String dataInizioString; // campo per la stringa formattata
+
+    @Column(name = "data_fine")
+    private LocalDateTime dataFine;
+    @Transient // Questo campo non sarà persistito nel DB
+    private String dataFineString; // campo per la stringa formattata
+
+    @Column
+    private String immagine;
 
 
     @ManyToOne(cascade = CascadeType.REFRESH)
@@ -54,20 +62,44 @@ public class Evento {
         this.luogo = luogo;
     }
 
-    public LocalDateTime getDataEvento() {
-        return dataEvento;
+    public LocalDateTime getDataInizio() {
+        return dataInizio;
     }
 
-    public void setDataEvento(LocalDateTime dataEvento) {
-        this.dataEvento = dataEvento;
+    public void setDataInizio(LocalDateTime dataInizio) {
+        this.dataInizio = dataInizio;
     }
 
-    public String getDataEventoString() {
-        return dataEventoString;
+    public String getDataInizioString() {
+        return dataInizioString;
     }
 
-    public void setDataEventoString(String dataEventoString) {
-        this.dataEventoString = dataEventoString;
+    public void setDataInizioString(String dataInizioString) {
+        this.dataInizioString = dataInizioString;
+    }
+
+    public LocalDateTime getDataFine() {
+        return dataFine;
+    }
+
+    public void setDataFine(LocalDateTime dataFine) {
+        this.dataFine = dataFine;
+    }
+
+    public String getDataFineString() {
+        return dataFineString;
+    }
+
+    public void setDataFineString(String dataFineString) {
+        this.dataFineString = dataFineString;
+    }
+
+    public String getImmagine() {
+        return immagine;
+    }
+
+    public void setImmagine(String immagine) {
+        this.immagine = immagine;
     }
 
     public Categoria getCategoria() {

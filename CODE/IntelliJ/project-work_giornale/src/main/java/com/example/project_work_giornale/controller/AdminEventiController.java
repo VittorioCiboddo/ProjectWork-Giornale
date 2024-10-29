@@ -51,9 +51,10 @@ public class AdminEventiController {
     @PostMapping
     public String formManager(@RequestParam("nome") String nome,
                               @RequestParam("luogo") String luogo,
-                              @RequestParam("dataEvento") LocalDateTime dataEvento,
+                              @RequestParam("dataInizio") LocalDateTime dataInizio,
+                              @RequestParam("dataFine") LocalDateTime dataFine,
                               @RequestParam("categoria") int idCategoria) {
-        eventoService.aggiungiEvento(evento, nome, luogo, dataEvento, idCategoria);
+        eventoService.aggiungiEvento(evento, nome, luogo, dataInizio, dataFine, idCategoria);
         return "redirect:/admineventi";
     }
 

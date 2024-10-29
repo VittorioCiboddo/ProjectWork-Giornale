@@ -27,7 +27,8 @@ public class EventoServiceImpl implements EventoService{
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
         for (Evento evento : eventi) {
-            evento.setDataEventoString(evento.getDataEvento().format(formatter));
+            evento.setDataInizioString(evento.getDataInizio().format(formatter));
+            evento.setDataFineString(evento.getDataFine().format(formatter));
         }
         return eventi;
     }
@@ -41,13 +42,15 @@ public class EventoServiceImpl implements EventoService{
     }
 
     @Override
-    public void aggiungiEvento(Evento evento, String nome, String luogo, LocalDateTime dataEvento, int idCategoria) {
+    public void aggiungiEvento(Evento evento, String nome, String luogo, LocalDateTime dataInizio, LocalDateTime dataFine, int idCategoria) {
         evento.setNome(nome);
         evento.setLuogo(luogo);
-        evento.setDataEvento(dataEvento);
+        evento.setDataInizio(dataInizio);
+        evento.setDataFine(dataFine);
         evento.setCategoria(categoriaService.datiCategoria(idCategoria));
         eventoDao.save(evento);
     }
+
 
     @Override
     public void eliminaEvento(int idEvento) {

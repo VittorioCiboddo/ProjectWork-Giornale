@@ -12,6 +12,6 @@ public interface EventoService {
     Evento dettaglioEvento(int idEvento);
 
     void aggiungiEvento(Evento evento, String nome, String luogo,
-                        LocalDateTime dataEvento, int idCategoria);
+                        LocalDateTime dataInizio, LocalDateTime dataFine, int idCategoria);
     void eliminaEvento(int idEvento);
 }
