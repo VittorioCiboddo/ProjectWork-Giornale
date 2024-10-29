@@ -29,6 +29,63 @@
             white-space: nowrap;
             /* Impedisce al testo di andare a capo */
         }
+
+        #tec, #int, #pc {
+            padding: 20px;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);/* Aggiunge un'ombra intorno alla sezione */
+            transition: transform 0.3s ease;/* Effetto di transizione per l'ingrandimento */
+        }
+
+        #tec:hover, #int:hover, #pc:hover {
+            transform: scale(1.02); /* Ingrandisce leggermente la sezione durante l'hover */
+        }
+
+        #linkz {
+            width: 250px; /* Aumenta leggermente per migliorare la leggibilitÃ  */
+            margin-right: 30px;
+        }
+
+        .linkz ul {
+            list-style: none; /* Rimuove i pallini a sinistra */
+            padding: 0; /* Rimuove il padding*/
+        }
+
+        .linkz a {
+             text-decoration: none; /* Rimuove la sottolineatura */
+             color: black; /* Imposta il colore del testo a nero */
+        }
+
+        .linkz a:hover {
+            color: #0056b3; /* Colore al passaggio del mouse (decidi tu se mantenere nero o cambiare) */
+        }
+
+        #link a {
+            display: block;
+            margin-bottom: 15px;
+            color: #0056b3;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        #link a:hover {
+            background-color: #e6f2ff;
+            color: #004080;
+        }
+
+        main-article {
+            flex: 1;
+            /* Consente all'articolo di occupare il resto dello spazio disponibile */
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0; /* Spazio sopra e sotto il video */
+        }
+
     </style>
 
 </head>
@@ -90,29 +147,21 @@
     </nav>
 
     <!-- Contenuto principale -->
-    <div class="main-content d-flex mt-5">
-        <!-- HO COMMENTATO QUA PERCHE' BISOGNA DECIDERE SE IL BANNER SI DEBBA VEDERE QUI,
-         COSI' COME IL MENU' LATERALE A SINISTRA -->
-        <!--<div class="ultimora">
-            <h2>Ultim'ora</h2>
-            <div th:each="notizia : ${notizia}">
-                <h3 th:text="${notizia.titolo}">Titolo notizia</h3>
-                <p th:text="${notizia.descrizione}">Descrizione notizia</p>
+    <div class="main-content d-flex mt-5"> <!-- div con id="container" -->
+        <div class="ultimora">
+            <div id="link" class="linkz">
+                <ul>
+                    <li><a href="#tec">10 strumenti per creare video da zero con l'AI</a></li>
+                    <li><a href="#int">Come utilizzare NordVPN nel 2024 - Tutorial per l'acquisto, l'installazione e la configurazione</a></li>
+                    <li><a href="#pc">Impara Arduino in modo PRATICO, facile e divertente! Arduino Tutorial Italiano per Principianti.</a></li>
+                    <li><a href="#pho">Come modificare video in Photoshop</a></li>
+                </ul>
             </div>
-            <hr>
-            <h4>Sondaggio: gli europei non si fidano dell'IA nelle elezioni, ma dicono sì al riconoscimento facciale
-            </h4>
-            <hr>
-            <h4>Radio, i 100 anni in Italia da Marconi alla rivoluzione digitale</h4>
-            <hr>
-            <h4>Clementoni lancia il primo robot giocattolo dotato di intelligenza artificiale</h4>
-            <hr>
-            <h4>Pokémon colpito da un enorme attacco hacker: Game Freak conferma il furto dati</h4>
 
             <div id="contenitore-foto" style="margin-top: 100%;"></div>
 
 
-            &lt;!&ndash;script per il banner pubbicità&ndash;&gt;
+            <!--script per il banner pubbicità-->
             <script>
 
                 const banner = [
@@ -145,20 +194,70 @@
                 scorrimentoAutomatico();
 
             </script>
+        </div>
 
-        </div>-->
+
 
         <div class="main-article">
-            <!-- HO COMMENTATO QUA IN ATTESA DI CARICARE IL VERO CONTENUTO DI tutorial -->
-            <!--<h2 class="front-page-title">I robot Optimus Gen 2 di Tesla all’evento Cybercab sono agili, ma sono
-                autonomi? Cosa possono fare</h2>
-            <img src="/images/tesla.jpg" alt="Immagine dell'articolo" class="img-fluid front-page-image">
-            <p>
-                I robot umanoidi Optimus Gen 2 di Tesla presentati da Elon Musk all'evento Cybercab camminano, danzano, servono da bere e interagiscono con le persone. Anche se, a detta di alcuni, non erano del tutto autonomi.
-                Elon Musk intende produrli in massa per renderli disponibili a prezzi di 20-30.000 dollari. Un gruppo di robot umanoidi Optimus Gen 2 prodotti da Tesla, l'azienda automobilistica di Elon Musk, ha sfilato a Los Angeles durante l'evento Cybercab dedicato alla presentazione del nuovo Tesla Robovan (una sorta di navetta a guida autonoma).
-                Musk ha approfittato dell'occasione per elogiare le capacità dei suoi robot, sottolineando quanto siano avanzate rispetto al primo prototipo mostrato in pubblico nel 2022. Oggi i robot Optimus possono camminare, svolgere attività quotidiane come portare pacchi o irrigare piante, e persino interagire con le persone: a vederli sembrano in grado di per svolgere compiti domestici.
-                I video diffusi mostrano robot che camminano tra la folla, si cimentano in danze sincronizzate e servono da bere. Da quanto si apprende da alcune fonti online, come The Verge, Tesla avrebbe in parte barato nel fare sfoggio di questi “droidi”, che erano in parte controllati da personale umano.
-            </p>-->
+            <div id="tec">
+                <h1>10 strumenti per creare video da zero con l'AI</h1>
+                <p>
+                    Creare un video da zero con l'AI è diventato un processo rivoluzionario e accessibile a tutti. Grazie alle recenti tecnologie, è possibile utilizzare strumenti di intelligenza artificiale per generare script, voci narranti, e persino immagini o animazioni, senza la necessità di attrezzature costose o competenze avanzate. Alcune piattaforme AI offrono servizi di generazione automatica di contenuti visivi basati su descrizioni testuali, permettendo agli utenti di trasformare idee in realtà in pochi minuti. Con l’aiuto di modelli di sintesi vocale avanzati, le voci narranti possono suonare naturali e coinvolgenti, adattandosi a diversi toni e stili. Questo approccio rende più facile la creazione di contenuti per marketing, educazione, o intrattenimento. Inoltre, l'AI consente di risparmiare tempo e costi, democratizzando la produzione di video e rendendola accessibile anche ai piccoli creatori e alle aziende emergenti che desiderano comunicare in modo efficace e innovativo.
+                </p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4mL8k7b3P5o"></iframe>
+                </div>
+            </div>
+            <div id="int">
+                <h1>Come utilizzare NordVPN nel 2024 - Tutorial per l'acquisto, l'installazione e la configurazione</h1>
+
+                <p>NordVPN è uno strumento affidabile per navigare in sicurezza su internet, proteggendo la propria privacy grazie alla crittografia dei dati. Nel 2024, acquistare, installare e configurare NordVPN è semplice e rapido. Per iniziare, visita il sito ufficiale di NordVPN, scegli un piano che risponda alle tue esigenze (sono disponibili opzioni mensili o annuali) e procedi con l'acquisto. Una volta completato, riceverai le istruzioni per scaricare l’applicazione su dispositivi Windows, macOS, Android, o iOS.
+
+                    Dopo l’installazione, apri l’app e accedi con le tue credenziali. Ora puoi connetterti a un server VPN: seleziona un paese tra le numerose opzioni disponibili. Una volta connesso, NordVPN cripta la tua connessione, proteggendo i tuoi dati e permettendoti di navigare con un indirizzo IP anonimo. Puoi anche attivare la funzione "CyberSec" per bloccare pubblicità e siti pericolosi, migliorando ulteriormente la sicurezza online.</p>
+                <!-- Video incorporato per Internet sicuro per tutti -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z0T3g1WmElE"></iframe>
+                </div>
+            </div>
+            <div id="pc">
+                <h1>Impara Arduino in modo PRATICO, facile e divertente! Arduino Tutorial Italiano per
+                    Principianti.</h1>
+                <p>Imparare Arduino è un’avventura pratica e accessibile che permette di creare progetti
+                    elettronici innovativi anche senza esperienza. Arduino è una piattaforma open-source
+                    composta da una scheda di microcontrollo e un ambiente di sviluppo facile da usare,
+                    perfetto per principianti e appassionati di elettronica. Con Arduino, è possibile
+                    realizzare progetti come sistemi di illuminazione automatizzata, piccoli robot,
+                    termometri e molto altro, dando vita a idee attraverso codice e circuiti. Seguendo un
+                    tutorial in italiano, si possono apprendere concetti fondamentali come la programmazione
+                    dei pin per accendere un LED o leggere sensori di movimento. Man mano che si acquisisce
+                    pratica, Arduino offre infinite possibilità di espansione, consentendo di integrare
+                    componenti avanzati e di creare dispositivi interattivi. È una piattaforma che stimola
+                    la creatività e consente di imparare in modo pratico, divertente e immediato,
+                    trasformando idee in progetti reali.</p>
+                <div class="video-container">
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/Dmin_DHbTRo"></iframe>
+                </div>
+            </div>
+            <div id="pho">
+                <h1>Come modificare video in Photoshop</h1>
+                <p>Modificare video in Photoshop è un processo accessibile che consente di apportare
+                    modifiche di base ai video direttamente all'interno dell'interfaccia di questo potente
+                    software di editing. Innanzitutto, è necessario importare il video in Photoshop aprendo
+                    un nuovo progetto e selezionando il file video desiderato. Una volta caricato, il video
+                    apparirà nella timeline, dove si possono gestire le varie clip. Photoshop offre
+                    strumenti per tagliare, ridimensionare e applicare effetti, come filtri e regolazioni di
+                    colore. È possibile aggiungere testi, sovrapposizioni grafiche e transizioni per
+                    personalizzare ulteriormente il video. Inoltre, gli utenti possono sfruttare i livelli,
+                    permettendo una gestione più flessibile degli elementi visivi. Dopo aver apportato tutte
+                    le modifiche desiderate, è possibile esportare il video in vari formati, garantendo che
+                    sia pronto per la condivisione o l'upload su piattaforme di social media. In questo
+                    modo, Photoshop si dimostra uno strumento utile non solo per l'editing di immagini, ma
+                    anche per i video.</p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WHxYHDvEEIg"></iframe>
+                </div>
+            </div>
         </div>
     </div>
 
