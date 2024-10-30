@@ -3,11 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Creato il: Ott 29, 2024 alle 15:32
-=======
--- Creato il: Ott 29, 2024 alle 15:30
->>>>>>> 7c2ab90af45516df266871aefa2660f5ba3378ea
+-- Creato il: Ott 30, 2024 alle 12:03
 -- Versione del server: 10.1.8-MariaDB
 -- Versione PHP: 5.6.14
 
@@ -89,12 +85,14 @@ CREATE TABLE `evento` (
 --
 
 INSERT INTO `evento` (`id_evento`, `nome`, `luogo`, `data_inizio`, `data_fine`, `immagine`, `fk_id_categoria`) VALUES
-(1, 'Cyber Security Summit', 'Milano', '2024-02-28 10:00:00', '2024-02-29 17:00:00', NULL, 2),
-(2, 'AI Festival', 'Milano', '2024-02-14 10:30:00', '2024-02-15 18:30:00', NULL, 1),
-(3, 'Sicurezza ICT', 'Milano', '2024-02-28 09:00:00', '2024-02-28 19:00:00', NULL, 2),
-(4, 'Cybersec Roma 2024', 'Roma', '2024-03-06 09:00:00', '2024-03-07 19:00:00', NULL, 2),
-(5, 'DX Day', 'Bologna (e online)', '2024-03-14 09:00:00', '2024-03-14 18:30:00', NULL, 3),
-(6, '.NET Conference', 'Roma (e online)', '2023-03-22 10:00:00', '2023-03-22 17:30:00', NULL, 3);
+(1, 'MECSPE', 'Bologna', '2025-03-05 09:30:00', '2025-03-07 18:00:00', NULL, 4),
+(2, 'SMAU', 'Milano', '2025-10-29 09:00:00', '2025-10-30 18:30:00', NULL, 3),
+(3, 'Maker Faire Rome', 'Roma', '2025-10-25 09:30:00', '2025-10-27 15:00:00', NULL, 3),
+(4, 'AI Week', 'Milano (Rho Fiera)', '2025-05-13 10:00:00', '2025-05-14 17:30:00', NULL, 1),
+(5, 'CYBSEC -EXPO', 'Piacenza', '2025-05-21 09:30:00', '2025-05-23 18:00:00', NULL, 2),
+(6, 'AI Global Summit', 'Bologna ', '2025-06-04 09:30:00', '2025-06-06 18:00:00', NULL, 1),
+(7, 'Sicurezza ICT', 'Milano', '2025-03-19 09:00:00', '2025-03-21 18:30:00', NULL, 2),
+(8, 'SPS Italia', 'Parma', '2025-05-13 09:30:00', '2025-05-15 19:00:00', NULL, 4);
 
 -- --------------------------------------------------------
 
@@ -187,7 +185,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT per la tabella `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT per la tabella `notizia`
 --
