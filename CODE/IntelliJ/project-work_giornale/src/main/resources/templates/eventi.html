@@ -136,7 +136,7 @@
     <!-- Contenuto principale -->
     <div class="main-content d-flex flex-wrap mt-5" style="justify-content: space-around;">
 
-        <a th:each="evento : ${evento}" href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
+        <a th:each="evento : ${evento}" th:href="@{/dettaglioevento(id=${evento.idEvento})}" class="text-decoration-none text-dark" style="width: 18rem; display: flex; flex-direction: column;">
             <div class="card m-3 card-hover" style="display: block;">
                 <img th:src="${evento.immagine}" class="card-img-top rounded" alt="Evento card">
                 <div class="card-body">
