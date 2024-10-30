@@ -99,7 +99,7 @@
                 <p th:text="${notizia.dataPubblicazione}">Data inizio</p>
                 <!--<p th:text="${#strings.abbreviate(notizia.descrizione, 100)}">Descrizione notizia</p>-->
             </div>
-            <div id="contenitore-foto" style="margin-top: 100%;"></div>
+            <div id="contenitore-foto" style="margin-top: 100%; height: 193px;"></div>
 
 
             <!--script per il banner pubbicità-->
@@ -119,7 +119,7 @@
                 function visualizzaFoto(indice) {
                     if (indice >= 0 && indice < banner.length) {
                         indiceCorrente = indice;
-                        contenitoreFoto.innerHTML = '<img src="' + banner[indice].src + '" alt="' + banner[indice].nome + '"style="height: auto; max-width: 100%">';
+                        contenitoreFoto.innerHTML = '<img src="' + banner[indice].src + '" alt="' + banner[indice].nome + '"style="height: 100%; max-width: 100%">';
                     }
                 }
 
