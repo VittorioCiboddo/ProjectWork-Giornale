@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 // localhost:8080/notizie
 @Controller
 @RequestMapping("/notizie")
-public class NotizieController {
+public class DettaglioNotizieController {
 
     @GetMapping
     public String getPage() {
-        return "notizie";
+        return "dettaglio-notizia";
     }
 }

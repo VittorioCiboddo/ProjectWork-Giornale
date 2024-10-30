@@ -49,11 +49,18 @@
         flex-grow: 1; /* Permette al corpo della card di espandersi per occupare spazio */
     }
 
+    .card-body h2.display-4 {
+        background-color: white; /* Sfondo bianco per il titolo */
+        padding: 10px; /* Padding per distanziare il testo dai bordi */
+        border-radius: 10px; /* Angoli arrotondati per un aspetto più elegante */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Leggera ombra per far risaltare il titolo */
+    }
+
+
     .main-content {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        background-color: white;
     }
 
     /* Impostazioni di margine per le card */
@@ -135,22 +142,31 @@
   </nav>
 
   <!-- Contenuto principale -->
-  <div class="main-content d-flex flex-wrap mt-5" style="justify-content: space-around;">
-
-    <h2 th:text="${evento.nome}"><strong></strong></h2>
-    <img th:src="${evento.immagine}">
-    <p th:text="${evento.descrizione}"></p>
-    <ul>
-      <li th:text="'📍 ' + ${evento.luogo}"></li>
-      <li th:text="'📅 ' + 'Dal ' + ${#temporals.format(evento.dataInizio.toLocalDate(), 'dd-MM-yyyy')} + ' al ' + ${#temporals.format(evento.dataFine.toLocalDate(), 'dd-MM-yyyy')}"></li>
-      <li th:text="'⏰ ' + 'Dalle ' + ${#temporals.format(evento.dataInizio.toLocalTime(), 'HH:mm')} + ' alle ' + ${#temporals.format(evento.dataFine.toLocalTime(), 'HH:mm')}"></li>
-    </ul>
+  <div class="main-content mt-5 container">
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-8">
+        <div class="card card-hover">
+          <div class="card-body">
+            <h2 class="display-4 text-center mb-4" th:text="${evento.nome}"></h2>
+            <img th:src="${evento.immagine}" class="card-img-top" alt="Immagine Evento">
+            <p th:text="${evento.descrizione}"></p>
+            <ul class="list-unstyled">
+              <li class="mb-1" th:text="'📍 ' + ${evento.luogo}"></li>
+              <li class="mb-1" th:text="'📅 ' + 'Dal ' + ${#temporals.format(evento.dataInizio.toLocalDate(), 'dd-MM-yyyy')} + ' al ' + ${#temporals.format(evento.dataFine.toLocalDate(), 'dd-MM-yyyy')}"></li>
+              <li th:text="'⏰ ' + 'Dalle ' + ${#temporals.format(evento.dataInizio.toLocalTime(), 'HH:mm')} + ' alle ' + ${#temporals.format(evento.dataFine.toLocalTime(), 'HH:mm')}"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
 
   <!-- Collegamento "Torna indietro" -->
   <div class="text-center mt-3">
     <a href="/eventi" class="btn btn-primary">Torna indietro</a>
   </div>
+
 
   <footer class="footer bg-dark text-white py-4" style="margin-top: 60px;">
     <div class="container">
