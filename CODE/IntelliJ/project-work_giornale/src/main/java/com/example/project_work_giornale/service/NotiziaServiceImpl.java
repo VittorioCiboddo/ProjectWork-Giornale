@@ -24,14 +24,17 @@ public class NotiziaServiceImpl implements NotiziaService {
 
     @Override
     public List<Notizia> elencoNotizia() {
-        return (List<Notizia>) notiziaDao.findAll();
+        List<Notizia> notizie = (List<Notizia>) notiziaDao.findAll();
+        Comparator<Notizia> comparator = Comparator.comparing(Notizia::getDataPubblicazione).reversed();
+        notizie = notizie.stream().sorted(comparator).collect(Collectors.toList());
+        return notizie;
     }
 
     @Override
-    public List<Notizia> elencoNotiziaInversed() {
+    public List<Notizia> elencoNotiziaUltimora() {
         List<Notizia> notizie = (List<Notizia>) notiziaDao.findAll();
-        Comparator<Notizia> comparator = Comparator.comparing(Notizia::getIdNotizia).reversed();
-        notizie = notizie.stream().sorted(comparator).limit(3).collect(Collectors.toList());
+        Comparator<Notizia> comparator = Comparator.comparing(Notizia::getDataPubblicazione).reversed();
+        notizie = notizie.stream().sorted(comparator).limit(5).collect(Collectors.toList());
         return notizie;
     }
 

@@ -21,7 +21,7 @@ public class IndexController {
 
     @GetMapping
     public String getPage(Model model) {
-        List<Notizia> notizia = notiziaService.elencoNotiziaInversed();
+        List<Notizia> notizia = notiziaService.elencoNotiziaUltimora();
         model.addAttribute("notizia", notizia);
         return "index";
     }

@@ -136,72 +136,16 @@
     <!-- Contenuto principale -->
     <div class="main-content d-flex flex-wrap mt-5" style="justify-content: space-around;">
 
-        <!-- Card 1 -->
-        <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
+        <a th:each="evento : ${evento}" href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
             <div class="card m-3 card-hover" style="display: block;">
-                <img src="/images/Card1.jpg" class="card-img-top rounded" alt="Evento 1">
+                <img src="${evento.immagine}" class="card-img-top rounded" alt="Evento card">
                 <div class="card-body">
-                    <h5 class="card-title">14 e 15 Febbraio AI Festival – Allianz MiCo, Milano</h5>
+                    <h5 class="card-title" th:text="${evento.nome}">Titolo evento</h5>
+                    <p class="card-text" th:text="${evento.dataInizio}">Data inizio</p>
 <!--                    <p class="card-text">Festival Internazionale dedicato al mondo dell’Intelligenza Artificiale. L’evento riunirà professionisti, aziende, startup e stakeholder per discutere e approfondire la rivoluzione apportata dall’AI non solo nel quotidiano, ma anche in ambito politico, sociale e lavorativo. Sotto la lente della due giorni anche le diverse industries particolarmente interessate dalla rivoluzione dell’AI, come martech, health, education, work e tanto altro ancora. </p>-->
                 </div>
             </div>
         </a>
-
-    <!-- Card 2 -->
-    <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
-        <div class="card m-3 card-hover">
-            <img src="/images/Card2.jpg" class="card-img-top rounded" alt="Evento 2">
-            <div class="card-body">
-                <h5 class="card-title">28 e 29 febbraio  CYBERSECURITY SUMMIT 2024 – NH Collection Milano CityLife</h5>
-<!--                <p class="card-text">Cybersecurity 5.0: Interconnessa, sostenibile, Human centric. Il CYBERSECURITY SUMMIT di TIG – The Innovation Group è il principale evento italiano in cui, insieme ai maggiori esperti italiani e internazionali, si fa il punto sugli sviluppi chiave della sicurezza informatica e sulle nuove sfide che interessano organizzazioni pubbliche e private.</p>-->
-            </div>
-        </div>
-    </a>
-
-    <!-- Card 3 -->
-    <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
-        <div class="card m-3 card-hover">
-            <img src="/images/Card3.jpg" class="card-img-top rounded" alt="Evento 3">
-            <div class="card-body">
-                <h5 class="card-title">28 febbraio Sicurezza ICT Milano (Roadshow)</h5>
-<!--                <p class="card-text">Torna il 28 Febbraio a Milano il roadshow Sicurezza ICT Il programma di incontri territoriali offre un’occasione di incontro e confronto fra domanda e offerta di soluzioni per la Security e la protezione delle informazioni aziendali. Scopri le altre città e il Programma dell’evento.</p>-->
-            </div>
-        </div>
-    </a>
-
-    <!-- Card 4 -->
-    <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
-        <div class="card m-3 card-hover">
-            <img src="/images/Card4.jpg" class="card-img-top rounded" alt="Evento 4">
-            <div class="card-body">
-                <h5 class="card-title">6 e 7 Marzo – Roma Cybersec 2024 – Roma</h5>
-<!--                <p class="card-text">La Cybersecurity nell’era dell’AI. La Conferenza internazionale offre un approfondimento sulle evoluzioni tecnologiche e normative della cybersicurezza e un ampio focus sulle frontiere dell’intelligenza artificiale per la cybersecurity.</p>-->
-            </div>
-        </div>
-    </a>
-
-    <!-- Card 5 -->
-    <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
-        <div class="card m-3 card-hover">
-            <img src="/images/Card5.jpg" class="card-img-top rounded" alt="Evento 5">
-            <div class="card-body">
-                <h5 class="card-title">14 Marzo dxday – Bologna e online</h5>
-<!--                <p class="card-text">La prima conferenza internazionale in Italia dedicata all’esperienza degli sviluppatori (DX/DevEx), con focus su temi come ambienti effimeri, intelligenza artificiale nella codifica, sviluppo remoto, progettazione API e altro ancora. Organizzato da GrUSP. </p>-->
-            </div>
-        </div>
-    </a>
-
-    <!-- Card 6 -->
-    <a href="#" class="text-decoration-none text-dark" style="width: 18rem;display: flex; flex-direction: column;">
-        <div class="card m-3 card-hover">
-            <img src="/images/Card6.jpg" class="card-img-top rounded" alt="Evento 6">
-            <div class="card-body">
-                <h5 class="card-title">22 marzo Rome .NET Conference – Roma e online</h5>
-<!--                <p class="card-text">E’ un evento online gratuito di un’intera giornata organizzato dalla DotNetCode Community per gli sviluppatori. L’argomento principale di quest’anno sarà .NET 8, ma verranno trattati anche molti altri argomenti sulle tecnologie e sui prodotti di sviluppo Microsoft (.NET, ASP.NET, AZURE, DevOps e altro…). La conferenza si terrà il prossimo 22 marzo e sarà possibile partecipare sia di persona che online.</p>-->
-            </div>
-        </div>
-    </a>
-    </div>
 
     <footer class="footer bg-dark text-white py-4" style="margin-top: 60px;">
         <div class="container">

@@ -10,7 +10,7 @@ import java.util.List;
 public interface NotiziaService {
     List<Notizia> elencoNotizia();
 
-    List<Notizia> elencoNotiziaInversed();
+    List<Notizia> elencoNotiziaUltimora();
 
     Notizia dettaglioNotizia(int idNotizia);
 

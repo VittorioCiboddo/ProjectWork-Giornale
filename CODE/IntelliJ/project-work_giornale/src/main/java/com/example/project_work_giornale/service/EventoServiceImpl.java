@@ -3,6 +3,7 @@ package com.example.project_work_giornale.service;
 import com.example.project_work_giornale.dao.EventoDao;
 import com.example.project_work_giornale.model.Categoria;
 import com.example.project_work_giornale.model.Evento;
+import com.example.project_work_giornale.model.Notizia;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -10,8 +11,10 @@ import org.springframework.web.multipart.MultipartFile;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Base64;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class EventoServiceImpl implements EventoService{
@@ -26,6 +29,8 @@ public class EventoServiceImpl implements EventoService{
     @Override
     public List<Evento> elencoEventi() {
         List<Evento> eventi = (List<Evento>) eventoDao.findAll();
+        Comparator<Evento> comparator = Comparator.comparing(Evento::getDataInizio);
+        eventi = eventi.stream().sorted(comparator).collect(Collectors.toList());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
         for (Evento evento : eventi) {

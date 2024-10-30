@@ -94,19 +94,11 @@
         <div class="ultimora">
             <h2>Ultim'ora</h2>
             <div th:each="notizia : ${notizia}">
+                <hr>
                 <h3 th:text="${notizia.titolo}">Titolo notizia</h3>
-                <p th:text="${#strings.abbreviate(notizia.descrizione, 100)}">Descrizione notizia</p>
+                <p th:text="${notizia.dataPubblicazione}">Data inizio</p>
+                <!--<p th:text="${#strings.abbreviate(notizia.descrizione, 100)}">Descrizione notizia</p>-->
             </div>
-            <hr>
-            <h4>Sondaggio: gli europei non si fidano dell'IA nelle elezioni, ma dicono sì al riconoscimento facciale
-            </h4>
-            <hr>
-            <h4>Radio, i 100 anni in Italia da Marconi alla rivoluzione digitale</h4>
-            <hr>
-            <h4>Clementoni lancia il primo robot giocattolo dotato di intelligenza artificiale</h4>
-            <hr>
-            <h4>Pokémon colpito da un enorme attacco hacker: Game Freak conferma il furto dati</h4>
-
             <div id="contenitore-foto" style="margin-top: 100%;"></div>
 
 
