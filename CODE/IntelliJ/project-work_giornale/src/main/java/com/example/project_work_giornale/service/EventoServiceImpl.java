@@ -49,7 +49,7 @@ public class EventoServiceImpl implements EventoService{
     }
 
     @Override
-    public void aggiungiEvento(Evento evento, String nome, String luogo, LocalDateTime dataInizio, LocalDateTime dataFine, int idCategoria, MultipartFile immagine) {
+    public void aggiungiEvento(Evento evento, String nome, String luogo, LocalDateTime dataInizio, LocalDateTime dataFine, int idCategoria, String descrizione, MultipartFile immagine) {
         evento.setNome(nome);
         evento.setLuogo(luogo);
         evento.setDataInizio(dataInizio);

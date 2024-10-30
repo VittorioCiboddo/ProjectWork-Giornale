@@ -1,10 +1,8 @@
 package com.example.project_work_giornale.model;
 
 import jakarta.persistence.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "evento")
@@ -38,6 +36,10 @@ public class Evento {
     @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "fk_id_categoria", referencedColumnName = "id_categoria")
     private Categoria categoria;
+
+    @Column
+    private String descrizione;
+
 
     public int getIdEvento() {
         return idEvento;
@@ -109,5 +111,13 @@ public class Evento {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
     }
 }

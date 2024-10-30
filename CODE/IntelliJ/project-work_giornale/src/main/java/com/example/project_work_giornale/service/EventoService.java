@@ -13,6 +13,6 @@ public interface EventoService {
     Evento dettaglioEvento(int idEvento);
 
     void aggiungiEvento(Evento evento, String nome, String luogo,
-                        LocalDateTime dataInizio, LocalDateTime dataFine, int idCategoria, MultipartFile immagine);
+                        LocalDateTime dataInizio, LocalDateTime dataFine, int idCategoria, String descrizione, MultipartFile immagine);
     void eliminaEvento(int idEvento);
 }
