@@ -54,8 +54,9 @@ public class AdminEventiController {
                               @RequestParam("dataInizio") LocalDateTime dataInizio,
                               @RequestParam("dataFine") LocalDateTime dataFine,
                               @RequestParam("categoria") int idCategoria,
+                              @RequestParam("descrizione") String descrizione,
                               @RequestParam("immagine") MultipartFile immagine) {
-        eventoService.aggiungiEvento(evento, nome, luogo, dataInizio, dataFine, idCategoria, immagine);
+        eventoService.aggiungiEvento(evento, nome, luogo, dataInizio, dataFine, idCategoria, descrizione, immagine);
         return "redirect:/admineventi";
     }
 

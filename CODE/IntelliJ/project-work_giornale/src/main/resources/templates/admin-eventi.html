@@ -152,6 +152,7 @@
   <hr>
   <form action="/admineventi" method="post" enctype="multipart/form-data">
     <input type="text" name="nome" placeholder="Nome Evento" required th:value="${evento.nome}">
+    <input type="text" name="descrizione" placeholder="Descrizione Evento" required th:value="${evento.descrizione}">
     <input type="text" name="luogo" placeholder="Luogo Evento" required th:value="${evento.luogo}">
     <input type="datetime-local" name="dataInizio" required th:value="${evento.dataInizio}">
     <input type="datetime-local" name="dataFine" required th:value="${evento.dataFine}">
