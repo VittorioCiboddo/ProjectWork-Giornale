@@ -41,6 +41,18 @@ public class EventoServiceImpl implements EventoService{
     }
 
     @Override
+    public List<Evento> elencoEventiAdmin() {
+        List<Evento> eventi = (List<Evento>) eventoDao.findAll();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+        for (Evento evento : eventi) {
+            evento.setDataInizioString(evento.getDataInizio().format(formatter));
+            evento.setDataFineString(evento.getDataFine().format(formatter));
+        }
+        return eventi;
+    }
+
+    @Override
     public Evento dettaglioEvento(int idEvento) {
         Optional<Evento> eventoOptional = eventoDao.findById(idEvento);
         if(eventoOptional.isPresent())
