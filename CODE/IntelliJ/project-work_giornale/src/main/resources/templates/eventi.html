@@ -142,7 +142,7 @@
                 <div class="card-body">
                     <h5 class="card-title" th:text="${evento.nome}">Titolo evento</h5>
                     <p class="card-text" th:text="${evento.dataInizio}">Data inizio</p>
-<!--                    <p class="card-text">Festival Internazionale dedicato al mondo dell’Intelligenza Artificiale. L’evento riunirà professionisti, aziende, startup e stakeholder per discutere e approfondire la rivoluzione apportata dall’AI non solo nel quotidiano, ma anche in ambito politico, sociale e lavorativo. Sotto la lente della due giorni anche le diverse industries particolarmente interessate dalla rivoluzione dell’AI, come martech, health, education, work e tanto altro ancora. </p>-->
+                    <p class="card-text" th:text="${#strings.abbreviate(evento.descrizione, 100)}">Descrizione notizia</p>
                 </div>
             </div>
         </a>
