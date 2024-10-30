@@ -37,7 +37,7 @@ public class AdminNotiziaController {
 
     @GetMapping
     public String getPage(Model model, @RequestParam(name = "id", required = false) Integer idNotizia) {
-        List<Notizia> notizie = notiziaService.elencoNotiziaAdmin();
+        List<Notizia> notizie = notiziaService.elencoNotizia();
         List<Categoria> categorie = categoriaService.elencoCategorie();
         Notizia notiziaDettaglio = idNotizia == null ? new Notizia() : notiziaService.dettaglioNotizia(idNotizia);
         notizia = notiziaDettaglio != null ? notiziaDettaglio : new Notizia(); // Assegna un nuovo Notizia se è null

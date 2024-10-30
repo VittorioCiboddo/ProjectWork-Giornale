@@ -12,8 +12,6 @@ public interface NotiziaService {
 
     List<Notizia> elencoNotiziaUltimora();
 
-    List<Notizia> elencoNotiziaAdmin();
-
     Notizia dettaglioNotizia(int idNotizia);
 
     void aggiungiNotizia(Notizia notizia, String titolo, String descrizione, LocalDate dataPubblicazione, MultipartFile immagine, String linkVideo, int idCategoria);

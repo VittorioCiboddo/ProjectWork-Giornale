@@ -10,8 +10,6 @@ public interface EventoService {
 
     List<Evento> elencoEventi();
 
-    List<Evento> elencoEventiAdmin();
-
     Evento dettaglioEvento(int idEvento);
 
     void aggiungiEvento(Evento evento, String nome, String luogo,

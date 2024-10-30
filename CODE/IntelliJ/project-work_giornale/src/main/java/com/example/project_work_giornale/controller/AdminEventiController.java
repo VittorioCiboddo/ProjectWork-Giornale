@@ -36,7 +36,7 @@ public class AdminEventiController {
 
     @GetMapping
     public String getPage(Model model, @RequestParam(name = "id", required = false) Integer idEvento) {
-        List<Evento> eventi = eventoService.elencoEventiAdmin();
+        List<Evento> eventi = eventoService.elencoEventi();
         List<Categoria> categorie = categoriaService.elencoCategorie();
         Evento eventoDettaglio = idEvento == null ? new Evento() : eventoService.dettaglioEvento(idEvento);
         evento = eventoDettaglio != null ? eventoDettaglio : new Evento(); // Assegna un nuovo Evento se è null

@@ -39,12 +39,6 @@ public class NotiziaServiceImpl implements NotiziaService {
     }
 
     @Override
-    public List<Notizia> elencoNotiziaAdmin() {
-        List<Notizia> notizie = (List<Notizia>) notiziaDao.findAll();
-        return notizie;
-    }
-
-    @Override
     public Notizia dettaglioNotizia(int idNotizia) {
         Optional<Notizia> notiziaOptional = notiziaDao.findById(idNotizia);
         return notiziaOptional.orElse(null);
