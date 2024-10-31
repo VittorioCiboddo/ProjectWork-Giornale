@@ -5,55 +5,35 @@ import com.example.project_work_giornale.model.Notizia;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 public interface NotiziaDao extends CrudRepository<Notizia, Integer> {
-/*
-    Notizia groupByCategoriaAI(int idCategoria);
 
-    @Query
-            (
-                    value = "SELECT n.titolo, n.descrizione, n.data_pubblicazione, n.immagine, n.link_video, c.nome AS 'tipologia' " +
-                            "FROM notizia n " +
-                            "JOIN categoria c ON n.fk_id_categoria = c.id_categoria " +
-                            "WHERE c.nome = 'intelligenza artificiale' " +
-                            "ORDER BY c.nome;",
-                    nativeQuery = true
+    @Query  (
+
+            value = "SELECT n.*" +
+                    "            FROM notizia n" +
+                    "            JOIN categoria c ON n.fk_id_categoria = c.id_categoria" +
+                   "            WHERE c.nome = ?1 " +
+                  "ORDER BY n.data_pubblicazione DESC",
+                nativeQuery = true
             )
 
-    Notizia groupByCategoriaCyber(int idCategoria);
+    List<Notizia> findNotizieByCategoriaNome(String nomeCategoria);
 
-    @Query
-            (
-                    value = "SELECT n.titolo, n.descrizione, n.data_pubblicazione, n.immagine, n.link_video, c.nome AS 'tipologia' " +
-                            "FROM notizia n " +
-                            "JOIN categoria c ON n.fk_id_categoria = c.id_categoria " +
-                            "WHERE c.nome = 'cyber security' " +
-                            "ORDER BY c.nome;",
-                    nativeQuery = true
 
-            )
+    @Query  (
 
-    Notizia groupByCategoriaInnovazioni(int idCategoria);
-
-    @Query
-            (
-                    value = "SELECT n.titolo, n.descrizione, n.data_pubblicazione, n.immagine, n.link_video, c.nome AS 'tipologia' " +
-                            "FROM notizia n " +
-                            "JOIN categoria c ON n.fk_id_categoria = c.id_categoria " +
-                            "WHERE c.nome = 'innovazioni' " +
-                            "ORDER BY c.nome;",
-                    nativeQuery = true
+            value = "SELECT n.* FROM notizia n " +
+                "WHERE n.data_pubblicazione = (SELECT MAX(n2.data_pubblicazione) " +
+                "FROM notizia n2 JOIN categoria c ON n2.fk_id_categoria = c.id_categoria " +
+                "WHERE c.nome = ?1)",
+                nativeQuery = true
 
             )
 
-    Notizia groupByCategoriaRobotica(int idCategoria);
+    List<Notizia> getUltimaNotiziaPerCategoria(String nomeCategoria);
 
-    @Query
-            (
-                    value = "SELECT n.titolo, n.descrizione, n.data_pubblicazione, n.immagine, n.link_video, c.nome AS 'tipologia' " +
-                            "FROM notizia n " +
-                            "JOIN categoria c ON n.fk_id_categoria = c.id_categoria " +
-                            "WHERE c.nome = 'robotica' " +
-                            "ORDER BY c.nome;",
-                    nativeQuery = true
-            )*/
+
+
 }

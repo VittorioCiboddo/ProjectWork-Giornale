@@ -19,6 +19,9 @@ public class Notizia {
     @Column
     private String descrizione;
 
+    @Column
+    private String autore;
+
     @Column(name = "data_pubblicazione")
     private LocalDate dataPubblicazione;
 
@@ -56,7 +59,17 @@ public class Notizia {
         this.descrizione = descrizione;
     }
 
-    public LocalDate getDataPubblicazione() { return dataPubblicazione; }
+    public String getAutore() {
+        return autore;
+    }
+
+    public void setAutore(String autore) {
+        this.autore = autore;
+    }
+
+    public LocalDate getDataPubblicazione() {
+        return dataPubblicazione;
+    }
 
     public void setDataPubblicazione(LocalDate dataPubblicazione) {
         this.dataPubblicazione = dataPubblicazione;
@@ -82,5 +95,7 @@ public class Notizia {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 }

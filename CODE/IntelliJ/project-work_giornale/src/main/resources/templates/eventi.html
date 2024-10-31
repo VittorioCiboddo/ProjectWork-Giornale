@@ -109,11 +109,11 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="intelligenza-artificiale.html">Intelligenza
+                            <li><a class="dropdown-item" href="/intelligenzaartificiale">Intelligenza
                                 Artificiale</a></li>
-                            <li><a class="dropdown-item" href="cybersecurity.html">Cybersecurity</a></li>
-                            <li><a class="dropdown-item" href="gadget.html">Robotica</a></li>
-                            <li><a class="dropdown-item" href="innovazioni.html">Innovazioni</a></li>
+                            <li><a class="dropdown-item" href="/cybersecurity">Cybersecurity</a></li>
+                            <li><a class="dropdown-item" href="/robotica">Robotica</a></li>
+                            <li><a class="dropdown-item" href="/innovazioni">Innovazioni</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -141,7 +141,7 @@
                 <img th:src="${evento.immagine}" class="card-img-top rounded" alt="Evento card">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${evento.nome}">Titolo evento</h5>
-                    <p class="card-text" th:text="${evento.dataInizio}">Data inizio</p>
+                    <p class="card-text" th:text="'Dal ' + ${#temporals.format(evento.dataInizio.toLocalDate(), 'dd-MM')} + ' al ' + ${#temporals.format(evento.dataFine.toLocalDate(), 'dd-MM')} + '/' + ${#temporals.format(evento.dataInizio.toLocalDate(), 'yyyy')}">Data inizio</p>
                     <p class="card-text" th:text="${#strings.abbreviate(evento.descrizione, 100)}">Descrizione notizia</p>
                 </div>
             </div>

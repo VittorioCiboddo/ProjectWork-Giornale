@@ -52,11 +52,12 @@ public class AdminNotiziaController {
     @PostMapping
     public String formManager(@RequestParam("titolo") String titolo,
                               @RequestParam("descrizione") String descrizione,
+                              @RequestParam("autore") String autore,
                               @RequestParam("dataPubblicazione") LocalDate dataPubblicazione,
                               @RequestParam("immagine") MultipartFile immagine,
                               @RequestParam("linkVideo") String linkVideo,
                               @RequestParam("categoria") int idCategoria) {
-        notiziaService.aggiungiNotizia(notizia, titolo, descrizione, dataPubblicazione, immagine, linkVideo, idCategoria);
+        notiziaService.aggiungiNotizia(notizia, titolo, descrizione, autore, dataPubblicazione, immagine, linkVideo, idCategoria);
         return "redirect:/adminnotizie";
     }
 

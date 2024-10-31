@@ -7,10 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
-import java.util.Base64;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -45,9 +42,10 @@ public class NotiziaServiceImpl implements NotiziaService {
     }
 
     @Override
-    public void aggiungiNotizia(Notizia notizia, String titolo, String descrizione, LocalDate dataPubblicazione, MultipartFile immagine, String linkVideo, int idCategoria) {
+    public void aggiungiNotizia(Notizia notizia, String titolo, String descrizione, String autore, LocalDate dataPubblicazione, MultipartFile immagine, String linkVideo, int idCategoria) {
         notizia.setTitolo(titolo);
         notizia.setDescrizione(descrizione);
+        notizia.setAutore(autore);
         notizia.setCategoria(categoriaService.datiCategoria(idCategoria));
         notizia.setDataPubblicazione(dataPubblicazione);
 
@@ -68,4 +66,24 @@ public class NotiziaServiceImpl implements NotiziaService {
     public void eliminaNotizia(int idNotizia) {
         notiziaDao.deleteById(idNotizia);
     }
+
+    @Override
+    public List<Notizia> getNotizieByCategoria(String nomeCategoria) {
+        return notiziaDao.findNotizieByCategoriaNome(nomeCategoria);
+    }
+
+    public List<Notizia> getNotiziePerIndex(String nomeCategoria) {
+        return notiziaDao.getUltimaNotiziaPerCategoria(nomeCategoria);
+    }
+
+    @Override
+    public List<Notizia> getUltimeNotiziePerCategorie() {
+        List<Notizia> ultimeNotizie = new ArrayList<>();
+        ultimeNotizie.add(getNotiziePerIndex("Intelligenza Artificiale").get(0));
+        ultimeNotizie.add(getNotiziePerIndex("Cyber Security").get(0));
+        ultimeNotizie.add(getNotiziePerIndex("Robotica").get(0));
+        ultimeNotizie.add(getNotiziePerIndex("Innovazioni").get(0));
+        return ultimeNotizie;
+    }
+
 }

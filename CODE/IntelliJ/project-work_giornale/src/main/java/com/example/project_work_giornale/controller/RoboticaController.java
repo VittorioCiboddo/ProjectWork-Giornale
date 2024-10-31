@@ -1,7 +1,6 @@
 package com.example.project_work_giornale.controller;
 
 import com.example.project_work_giornale.model.Notizia;
-import com.example.project_work_giornale.service.AdminService;
 import com.example.project_work_giornale.service.NotiziaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,20 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-// localhost:8080
 @Controller
-@RequestMapping("/")
-public class IndexController {
+@RequestMapping("/robotica")
+public class RoboticaController {
 
     @Autowired
     private NotiziaService notiziaService;
 
     @GetMapping
     public String getPage(Model model) {
-        List<Notizia> ultimeNotiziePerCategorie = notiziaService.getUltimeNotiziePerCategorie();
-        model.addAttribute("ultimeNotizie", ultimeNotiziePerCategorie);
-        return "index";
+        List<Notizia> notizie = notiziaService.getNotizieByCategoria("Robotica");
+        model.addAttribute("notizie", notizie);
+        return "robotica";
     }
-
-
 }
