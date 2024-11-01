@@ -112,6 +112,9 @@
 
 <body>
 
+<!-- Bottone cambio tema -->
+<button id="theme-toggle">🌙 Modalità Scura</button>
+
 <div class="container-fluid main-container">
     <!-- Header stilizzato come sito giornalistico -->
     <header class="d-flex justify-content-center align-items-center p-3 bg-dark shadow-sm rounded">
@@ -172,7 +175,7 @@
             <div class="sticky">
                 <h4>Notizie</h4>
                 <ul>
-                    <li><a href="/notizie" style="font-size: 20px; color: rgba(20, 83, 137, 0.9);">Tutte le notizie</a></li>
+                    <li id="list1"><a href="/notizie" style="font-size: 20px; color: rgba(20, 83, 137, 0.9);">Tutte le notizie</a></li>
                     <li><a href="/intelligenzaartificiale">Intelligenza
                         Artificiale</a></li>
                     <li><a href="/cybersecurity">Cyber Security</a></li>
@@ -345,6 +348,37 @@
         crossorigin="anonymous">
 
 </script>
+
+
+<!-- Script cambio tema -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeToggleButton = document.getElementById("theme-toggle");
+        const darkThemeClass = "dark-theme";
+
+        // Controlla se la modalità scura era attivata
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add(darkThemeClass);
+            themeToggleButton.textContent = "☀️ Modalità Chiara";
+        }
+
+        // Cambia il tema al click del bottone
+        themeToggleButton.addEventListener("click", () => {
+            document.body.classList.toggle(darkThemeClass);
+
+            // Aggiorna il testo del bottone e salva la preferenza
+            if (document.body.classList.contains(darkThemeClass)) {
+                themeToggleButton.textContent = "☀️ Modalità Chiara";
+                localStorage.setItem("theme", "dark");
+            } else {
+                themeToggleButton.textContent = "🌙 Modalità Scura";
+                localStorage.setItem("theme", "light");
+            }
+        });
+    });
+</script>
+
+
 
 </div>
 </body>

@@ -191,3 +191,75 @@ nav.navbar a:hover {
     color: white;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transizione per hover */
 }
+
+
+
+
+/* Tema Scuro */
+
+/* Impostazioni generali per tema scuro */
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+    background-image: url('/images/sfondo_dark.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.dark-theme header, .dark-theme footer {
+    background-color: #252525;
+    color: white;
+}
+
+/* Colori per sezioni principali */
+.dark-theme .main-article, .dark-theme .ultimora {
+    background-color: #252525;
+    color: white;
+}
+
+.dark-theme .front-page-title {
+    color: white;
+}
+
+/* Navbar e menu a tendina in modalità scura */
+.dark-theme .navbar, .dark-theme .dropdown-menu {
+    background-color: #252525;
+    color: white;
+}
+
+/* Link in modalità scura */
+.dark-theme a {
+    color: white;
+}
+
+.dark-theme .notizia-container {
+    background-color: #2569aa;
+}
+
+
+/* List items dark*/
+.dark-theme .ultimora li a {
+    color:white;
+}
+
+.dark-theme #list1 a {
+    color: #9dbed1 !important;
+}
+
+.dark-theme #list2 a {
+    color: #9dbed1 !important;
+}
+
+.dark-theme #list3 a {
+    color: #9dbed1 !important;
+}
+
+.dark-theme #list4 a {
+    color: #9dbed1 !important;
+}
+
+.dark-theme #list5 a {
+    color: #9dbed1 !important;
+}
