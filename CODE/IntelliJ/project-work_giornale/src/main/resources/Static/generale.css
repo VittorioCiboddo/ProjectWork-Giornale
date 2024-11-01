@@ -167,6 +167,10 @@ nav.navbar a:hover {
     margin-bottom: 5px;
 }
 
+.sticky {
+    position:sticky;
+    top: 70px;
+}
 
 
 
