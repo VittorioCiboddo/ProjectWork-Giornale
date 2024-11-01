@@ -15,6 +15,8 @@ body {
     width: 70%; /* PiÃ¹ margine ai lati */
     margin: 0 auto;
     padding-top: 20px;
+    border-radius: 8px; /* Angoli arrotondati come il menu a sinistra */
+    overflow: hidden; /* Nasconde eventuali contenuti che escono dai bordi */
 }
 
 header {
@@ -197,6 +199,51 @@ nav.navbar a:hover {
 
 /* Tema Scuro */
 
+/* Stile per il bottone del tema */
+.theme-toggle {
+    position: fixed; /* Posizione fissa */
+    right: 20px; /* Posizione a destra */
+    top: 50%; /* Centrato verticalmente */
+    transform: translateY(-50%); /* Regolazione per il centro esatto */
+    display: flex;
+    flex-direction: column; /* Imposta la direzione verticale */
+    cursor: pointer; /* Mostra il cursore a forma di mano */
+    border-radius: 50%; /* Angoli arrotondati */
+    width: 60px; /* Imposta una larghezza fissa */
+    height: 60px; /* Imposta un'altezza fissa */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Ombra per il bottone */
+}
+
+.theme-icon {
+    width: 100%; /* Larghezza dell'icona */
+    height: 100%; /* Altezza dell'icona */
+    display: flex;
+    align-items: center; /* Centrato verticalmente */
+    justify-content: center; /* Centrato orizzontalmente */
+    font-size: 24px; /* Dimensione del carattere */
+    transition: background-color 0.3s; /* Transizione dolce per lo sfondo */
+}
+
+.sun {
+    background-color: white; /* Sfondo bianco per il sole */
+    color: black; /* Colore del sole */
+}
+
+.moon {
+    background-color: black; /* Sfondo nero per la luna */
+    color: white; /* Colore della luna */
+}
+
+/* Cambio di colore al passaggio del mouse */
+.theme-toggle:hover .sun {
+    background-color: #f0f0f0; /* Colore chiaro al passaggio del mouse */
+}
+
+.theme-toggle:hover .moon {
+    background-color: #333; /* Colore scuro al passaggio del mouse */
+}
+
+
 /* Impostazioni generali per tema scuro */
 .dark-theme {
     background-color: #121212;
@@ -208,10 +255,62 @@ nav.navbar a:hover {
     background-attachment: fixed;
 }
 
+
+.dark-theme .btn-primary {
+    background-color: #252525; /* Colore di sfondo del pulsante */
+    border-color: #252525; /* Colore del bordo */
+}
+
+.dark-theme .btn-primary:hover {
+    background-color: #333; /* Colore di sfondo del pulsante al passaggio del mouse */
+    border-color: #333; /* Colore del bordo al passaggio del mouse */
+}
+
 .dark-theme header, .dark-theme footer {
     background-color: #252525;
     color: white;
 }
+
+/* Nuova regola per cambiare il colore del testo con la classe "tipo" */
+.dark-theme .tipo:hover {
+    color: black; /* Cambia il colore del testo a nero */
+}
+
+/* Navbar e menu a tendina in modalità scura */
+.dark-theme .navbar {
+    background-color: rgba(37, 37, 37, 0.8) !important; /* Sfondo nero trasparente */
+}
+
+/* Hover per i link della navbar in modalità scura */
+.dark-theme .navbar a:hover {
+    background-color: rgba(30, 115, 190, 0.9) !important; /* Colore hover della navbar */
+    color: #fff !important; /* Colore del testo al passaggio del mouse */
+}
+
+.dark-theme .dropdown-menu {
+    background-color: rgba(37, 37, 37, 0.8) !important; /* Menu a tendina sfondo nero trasparente */
+}
+
+.dark-theme .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(30, 115, 190, 0.9) !important; /* Hover menu a tendina */
+    color: white; /* Colore bianco al passaggio del mouse */
+}
+
+/* Main Article hover effect */
+.dark-theme .notizia-container:hover {
+    transform: scale(1.02); /* Ingrandisce la scheda */
+}
+
+.dark-theme .notizia-container:hover h2,
+.dark-theme .notizia-container:hover .categoria {
+    color: black; /* Colore del testo in nero al passaggio del mouse */
+}
+
+/* Nuova regola per modificare il colore della categoria al passaggio del mouse */
+.dark-theme .main-article .notizia-container:hover .tipo {
+    color: black; /* Colore del testo della categoria a nero */
+}
+
 
 /* Colori per sezioni principali */
 .dark-theme .main-article, .dark-theme .ultimora {

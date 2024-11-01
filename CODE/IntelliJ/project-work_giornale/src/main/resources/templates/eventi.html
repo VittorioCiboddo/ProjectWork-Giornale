@@ -55,6 +55,14 @@
             justify-content: space-around;
         }
 
+        .dark-theme .card  {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: #252525;
+            color: white;
+        }
+
         /* Impostazioni di margine per le card */
         .acard-container {
             margin: 15px; /* Margine per tutte le card */
@@ -80,7 +88,14 @@
 <body>
 
 <!-- Bottone cambio tema -->
-<button id="theme-toggle">🌙 Modalità Scura</button>
+<div id="theme-toggle" class="theme-toggle">
+    <div class="theme-icon sun" style="display: none;">
+        ☀️
+    </div>
+    <div class="theme-icon moon" style="display: flex;">
+        🌙
+    </div>
+</div>
 
 <div class="container-fluid main-container">
     <!-- Header stilizzato come sito giornalistico -->
@@ -139,13 +154,17 @@
     <!-- Contenuto principale -->
     <div class="main-content d-flex flex-wrap mt-5" style="justify-content: space-around;">
 
-        <a th:each="evento : ${evento}" th:href="@{/dettaglioevento(id=${evento.idEvento})}" class="text-decoration-none text-dark" style="width: 18rem; display: flex; flex-direction: column;">
+        <a th:each="evento : ${evento}" th:href="@{/dettaglioevento(id=${evento.idEvento})}"
+           class="text-decoration-none text-dark" style="width: 18rem; display: flex; flex-direction: column;">
             <div class="card m-3 card-hover" style="display: block;">
                 <img th:src="${evento.immagine}" class="card-img-top rounded" alt="Evento card">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${evento.nome}">Titolo evento</h5>
-                    <p class="card-text" th:text="'Dal ' + ${#temporals.format(evento.dataInizio.toLocalDate(), 'dd-MM')} + ' al ' + ${#temporals.format(evento.dataFine.toLocalDate(), 'dd-MM')} + '/' + ${#temporals.format(evento.dataInizio.toLocalDate(), 'yyyy')}">Data inizio</p>
-                    <p class="card-text" th:text="${#strings.abbreviate(evento.descrizione, 100)}">Descrizione notizia</p>
+                    <p class="card-text"
+                       th:text="'Dal ' + ${#temporals.format(evento.dataInizio.toLocalDate(), 'dd-MM')} + ' al ' + ${#temporals.format(evento.dataFine.toLocalDate(), 'dd-MM')} + '/' + ${#temporals.format(evento.dataInizio.toLocalDate(), 'yyyy')}">
+                        Data inizio</p>
+                    <p class="card-text" th:text="${#strings.abbreviate(evento.descrizione, 100)}">Descrizione
+                        notizia</p>
                 </div>
             </div>
         </a>
@@ -243,28 +262,34 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const themeToggleButton = document.getElementById("theme-toggle");
+            const sunIcon = themeToggleButton.querySelector('.sun');
+            const moonIcon = themeToggleButton.querySelector('.moon');
             const darkThemeClass = "dark-theme";
 
             // Controlla se la modalità scura era attivata
             if (localStorage.getItem("theme") === "dark") {
                 document.body.classList.add(darkThemeClass);
-                themeToggleButton.textContent = "☀️ Modalità Chiara";
+                sunIcon.style.display = "flex"; // Mostra il sole
+                moonIcon.style.display = "none"; // Nascondi la luna
             }
 
             // Cambia il tema al click del bottone
             themeToggleButton.addEventListener("click", () => {
                 document.body.classList.toggle(darkThemeClass);
 
-                // Aggiorna il testo del bottone e salva la preferenza
+                // Gestisce la visualizzazione delle icone
                 if (document.body.classList.contains(darkThemeClass)) {
-                    themeToggleButton.textContent = "☀️ Modalità Chiara";
+                    sunIcon.style.display = "flex"; // Mostra il sole
+                    moonIcon.style.display = "none"; // Nascondi la luna
                     localStorage.setItem("theme", "dark");
                 } else {
-                    themeToggleButton.textContent = "🌙 Modalità Scura";
+                    sunIcon.style.display = "none"; // Nascondi il sole
+                    moonIcon.style.display = "flex"; // Mostra la luna
                     localStorage.setItem("theme", "light");
                 }
             });
         });
+
     </script>
 
 </div>

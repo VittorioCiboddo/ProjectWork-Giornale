@@ -52,7 +52,6 @@
 
         .main-article .categoria {
             text-align: right; /* Allinea a destra */
-            font-weight: bold;
             margin-bottom: -1em; /* Spazio negativo per sovrapporre l'immagine */
         }
 
@@ -113,7 +112,15 @@
 <body>
 
 <!-- Bottone cambio tema -->
-<button id="theme-toggle">🌙 Modalità Scura</button>
+<div id="theme-toggle" class="theme-toggle">
+    <div class="theme-icon sun" style="display: none;">
+        ☀️
+    </div>
+    <div class="theme-icon moon" style="display: flex;">
+        🌙
+    </div>
+</div>
+
 
 <div class="container-fluid main-container">
     <!-- Header stilizzato come sito giornalistico -->
@@ -239,7 +246,8 @@
             <div class="notizia-container" th:each="notizia : ${ultimeNotizie}">
                 <a th:href="@{/dettaglionotizia(id=${notizia.idNotizia})}">
                     <h2 th:text="${notizia.titolo}"></h2>
-                    <img th:src="@{${notizia.immagine}}" alt="Immagine dell'articolo" class="img-fluid front-page-image">
+                    <img th:src="@{${notizia.immagine}}" alt="Immagine dell'articolo"
+                         class="img-fluid front-page-image">
                     <p class="categoria" th:text="'Ultim\'ora: ' + ${notizia.categoria.nome}"></p>
 
                     <!--<div class="author-date">
@@ -351,28 +359,34 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const themeToggleButton = document.getElementById("theme-toggle");
+            const sunIcon = themeToggleButton.querySelector('.sun');
+            const moonIcon = themeToggleButton.querySelector('.moon');
             const darkThemeClass = "dark-theme";
 
             // Controlla se la modalità scura era attivata
             if (localStorage.getItem("theme") === "dark") {
                 document.body.classList.add(darkThemeClass);
-                themeToggleButton.textContent = "☀️ Modalità Chiara";
+                sunIcon.style.display = "flex"; // Mostra il sole
+                moonIcon.style.display = "none"; // Nascondi la luna
             }
 
             // Cambia il tema al click del bottone
             themeToggleButton.addEventListener("click", () => {
                 document.body.classList.toggle(darkThemeClass);
 
-                // Aggiorna il testo del bottone e salva la preferenza
+                // Gestisce la visualizzazione delle icone
                 if (document.body.classList.contains(darkThemeClass)) {
-                    themeToggleButton.textContent = "☀️ Modalità Chiara";
+                    sunIcon.style.display = "flex"; // Mostra il sole
+                    moonIcon.style.display = "none"; // Nascondi la luna
                     localStorage.setItem("theme", "dark");
                 } else {
-                    themeToggleButton.textContent = "🌙 Modalità Scura";
+                    sunIcon.style.display = "none"; // Nascondi il sole
+                    moonIcon.style.display = "flex"; // Mostra la luna
                     localStorage.setItem("theme", "light");
                 }
             });
         });
+
     </script>
 
 </div>

@@ -39,6 +39,16 @@
             transition: transform 0.3s ease;/* Effetto di transizione per l'ingrandimento */
         }
 
+        .dark-theme #tec, #int, #pc, #pho {
+            padding: 20px;
+            background-color: rgba(30, 115, 190, 0.8);
+            color: black;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);/* Aggiunge un'ombra intorno alla sezione */
+            transition: transform 0.3s ease;/* Effetto di transizione per l'ingrandimento */
+        }
+
         #tec:hover, #int:hover, #pc:hover, #pho:hover {
             transform: scale(1.02); /* Ingrandisce leggermente la sezione durante l'hover */
         }
@@ -70,9 +80,24 @@
             border-radius: 4px;
             transition: background-color 0.3s, color 0.3s;
         }
+
+        .dark-theme #link a {
+            display: block;
+            margin-bottom: 15px;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
         #link a:hover {
             background-color: #e6f2ff;
             color: #004080;
+        }
+
+        .dark-theme #link a:hover {
+            background-color: rgba(30, 115, 190, 0.8);
+            color: #252525
         }
 
         main-article {
@@ -86,11 +111,22 @@
             margin: 20px 0; /* Spazio sopra e sotto il video */
         }
 
+
     </style>
 
 </head>
 
 <body>
+
+<!-- Bottone cambio tema -->
+<div id="theme-toggle" class="theme-toggle">
+    <div class="theme-icon sun" style="display: none;">
+        ☀️
+    </div>
+    <div class="theme-icon moon" style="display: flex;">
+        🌙
+    </div>
+</div>
 
 <div class="container-fluid main-container">
     <!-- Header stilizzato come sito giornalistico -->
@@ -197,12 +233,21 @@
         </div>
 
 
-
         <div class="main-article">
             <div id="tec">
                 <h1>Come sfruttare l'AI nel video-making</h1>
                 <p>
-                    Creare un video da zero con l'AI è diventato un processo rivoluzionario e accessibile a tutti. Grazie alle recenti tecnologie, è possibile utilizzare strumenti di intelligenza artificiale per generare script, voci narranti, e persino immagini o animazioni, senza la necessità di attrezzature costose o competenze avanzate. Alcune piattaforme AI offrono servizi di generazione automatica di contenuti visivi basati su descrizioni testuali, permettendo agli utenti di trasformare idee in realtà in pochi minuti. Con l’aiuto di modelli di sintesi vocale avanzati, le voci narranti possono suonare naturali e coinvolgenti, adattandosi a diversi toni e stili. Questo approccio rende più facile la creazione di contenuti per marketing, educazione, o intrattenimento. Inoltre, l'AI consente di risparmiare tempo e costi, democratizzando la produzione di video e rendendola accessibile anche ai piccoli creatori e alle aziende emergenti che desiderano comunicare in modo efficace e innovativo.
+                    Creare un video da zero con l'AI è diventato un processo rivoluzionario e accessibile a tutti.
+                    Grazie alle recenti tecnologie, è possibile utilizzare strumenti di intelligenza artificiale per
+                    generare script, voci narranti, e persino immagini o animazioni, senza la necessità di attrezzature
+                    costose o competenze avanzate. Alcune piattaforme AI offrono servizi di generazione automatica di
+                    contenuti visivi basati su descrizioni testuali, permettendo agli utenti di trasformare idee in
+                    realtà in pochi minuti. Con l’aiuto di modelli di sintesi vocale avanzati, le voci narranti possono
+                    suonare naturali e coinvolgenti, adattandosi a diversi toni e stili. Questo approccio rende più
+                    facile la creazione di contenuti per marketing, educazione, o intrattenimento. Inoltre, l'AI
+                    consente di risparmiare tempo e costi, democratizzando la produzione di video e rendendola
+                    accessibile anche ai piccoli creatori e alle aziende emergenti che desiderano comunicare in modo
+                    efficace e innovativo.
                 </p>
                 <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/4mL8k7b3P5o"></iframe>
@@ -211,9 +256,18 @@
             <div id="int">
                 <h1>Guida pratica e veloce a NordVPN</h1>
 
-                <p>NordVPN è uno strumento affidabile per navigare in sicurezza su internet, proteggendo la propria privacy grazie alla crittografia dei dati. Nel 2024, acquistare, installare e configurare NordVPN è semplice e rapido. Per iniziare, visita il sito ufficiale di NordVPN, scegli un piano che risponda alle tue esigenze (sono disponibili opzioni mensili o annuali) e procedi con l'acquisto. Una volta completato, riceverai le istruzioni per scaricare l’applicazione su dispositivi Windows, macOS, Android, o iOS.
+                <p>NordVPN è uno strumento affidabile per navigare in sicurezza su internet, proteggendo la propria
+                    privacy grazie alla crittografia dei dati. Nel 2024, acquistare, installare e configurare NordVPN è
+                    semplice e rapido. Per iniziare, visita il sito ufficiale di NordVPN, scegli un piano che risponda
+                    alle tue esigenze (sono disponibili opzioni mensili o annuali) e procedi con l'acquisto. Una volta
+                    completato, riceverai le istruzioni per scaricare l’applicazione su dispositivi Windows, macOS,
+                    Android, o iOS.
 
-                    Dopo l’installazione, apri l’app e accedi con le tue credenziali. Ora puoi connetterti a un server VPN: seleziona un paese tra le numerose opzioni disponibili. Una volta connesso, NordVPN cripta la tua connessione, proteggendo i tuoi dati e permettendoti di navigare con un indirizzo IP anonimo. Puoi anche attivare la funzione "CyberSec" per bloccare pubblicità e siti pericolosi, migliorando ulteriormente la sicurezza online.</p>
+                    Dopo l’installazione, apri l’app e accedi con le tue credenziali. Ora puoi connetterti a un server
+                    VPN: seleziona un paese tra le numerose opzioni disponibili. Una volta connesso, NordVPN cripta la
+                    tua connessione, proteggendo i tuoi dati e permettendoti di navigare con un indirizzo IP anonimo.
+                    Puoi anche attivare la funzione "CyberSec" per bloccare pubblicità e siti pericolosi, migliorando
+                    ulteriormente la sicurezza online.</p>
                 <!-- Video incorporato per Internet sicuro per tutti -->
                 <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/Z0T3g1WmElE"></iframe>
@@ -345,6 +399,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous">
+
+    </script>
+
+    <!-- Script cambio tema -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const themeToggleButton = document.getElementById("theme-toggle");
+            const sunIcon = themeToggleButton.querySelector('.sun');
+            const moonIcon = themeToggleButton.querySelector('.moon');
+            const darkThemeClass = "dark-theme";
+
+            // Controlla se la modalità scura era attivata
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add(darkThemeClass);
+                sunIcon.style.display = "flex"; // Mostra il sole
+                moonIcon.style.display = "none"; // Nascondi la luna
+            }
+
+            // Cambia il tema al click del bottone
+            themeToggleButton.addEventListener("click", () => {
+                document.body.classList.toggle(darkThemeClass);
+
+                // Gestisce la visualizzazione delle icone
+                if (document.body.classList.contains(darkThemeClass)) {
+                    sunIcon.style.display = "flex"; // Mostra il sole
+                    moonIcon.style.display = "none"; // Nascondi la luna
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    sunIcon.style.display = "none"; // Nascondi il sole
+                    moonIcon.style.display = "flex"; // Mostra la luna
+                    localStorage.setItem("theme", "light");
+                }
+            });
+        });
 
     </script>
 
