@@ -205,13 +205,13 @@ nav.navbar a:hover {
     right: 20px; /* Posizione a destra */
     top: 50%; /* Centrato verticalmente */
     transform: translateY(-50%); /* Regolazione per il centro esatto */
-    display: flex;
-    flex-direction: column; /* Imposta la direzione verticale */
-    cursor: pointer; /* Mostra il cursore a forma di mano */
-    border-radius: 50%; /* Angoli arrotondati */
     width: 60px; /* Imposta una larghezza fissa */
     height: 60px; /* Imposta un'altezza fissa */
+    border-radius: 50%; /* Angoli arrotondati */
+    overflow: hidden;
+    cursor: pointer; /* Mostra il cursore a forma di mano */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Ombra per il bottone */
+    background-color: transparent;
 }
 
 .theme-icon {

@@ -71,6 +71,22 @@
             line-height: 1.5; /* Altezza della linea per maggiore leggibilità */
         }
 
+        .contact-list a {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Regole per la modalità scura */
+        .dark-theme .contact-list a {
+            color: white; /* Colore del testo bianco */
+            text-decoration: none;
+        }
+
+        /* Puoi anche voler rimuovere l'effetto hover per mantenere il testo bianco */
+        .dark-theme .contact-list a:hover {
+            color: white; /* Mantenere il colore bianco al passaggio del mouse */
+        }
+
         .main-article-img {
             width: 100%; /* Immagine responsive */
             max-width: 600px; /* Limite di larghezza massima */
@@ -268,25 +284,28 @@
 
 
         <div class="main-article">
+
+            <img src="/images/applicazioni-sofware.jpg" alt="applicazioni-sofware" id="contatti_pic" class="main-article-img" />
+
             <h2 class="main-article-title"><strong>Redazione e Proposte Editoriali</strong></h2>
             <p class="main-article-description">Un'idea per un articolo o vuoi segnalarci una notizia interessante? Inviaci una mail, il nostro team editoriale valuterà con piacere ogni suggerimento!</p>
             <ul class="contact-list">
-                <li>📧 Email: redazione@technews.com</li>
-                <li>📞 Telefono: +39 0123 456 789 (Lun-Ven, 9:00-17:00)</li>
+                <li><a href="mailto:redazione@technews.com" class="contact-link">📧 Email: redazione@technews.com</a></li>
+                <li><a href="tel:+390123456789" class="contact-link">📞 Telefono: +39 0123 456 789 (Lun-Ven, 9:00-17:00)</a></li>
             </ul>
 
             <h2 class="main-article-title"><strong>Pubblicità e Sponsorizzazioni</strong></h2>
             <p class="main-article-description">Se sei un’azienda o un professionista e desideri collaborare con noi per pubblicità, articoli sponsorizzati o partnership, contattaci:</p>
             <ul class="contact-list">
-                <li>📧 Email: pubblicita@technews.com</li>
-                <li>📞 Telefono: +39 0987 654 321 (Lun-Ven, 9:00-17:00)</li>
+                <li><a href="mailto:pubblicita@technews.com" class="contact-link">📧 Email: pubblicita@technews.com</a></li>
+                <li><a href="tel:+390987654321" class="contact-link">📞 Telefono: +39 0987 654 321 (Lun-Ven, 9:00-17:00)</a></li>
             </ul>
 
             <h2 class="main-article-title"><strong>Assistenza Tecnica</strong></h2>
             <p class="main-article-description">Hai riscontrato problemi tecnici sul nostro sito? Il nostro team di supporto è qui per aiutarti.</p>
             <ul class="contact-list">
-                <li>📧 Email: supporto@technews.com</li>
-                <li>📞 Telefono: +39 0456 789 012 (Lun-Ven, 9:00-18:00)</li>
+                <li><a href="mailto:supporto@technews.com" class="contact-link">📧 Email: supporto@technews.com</a></li>
+                <li><a href="tel:+390456789012" class="contact-link">📞 Telefono: +39 0456 789 012 (Lun-Ven, 9:00-18:00)</a></li>
             </ul>
 
             <h2 class="main-article-title"><strong>Sede Fisica</strong></h2>
@@ -294,10 +313,9 @@
             <ul class="contact-list">
                 <li>📍 Indirizzo: Via Piave 8, 00187 Roma</li>
                 <li>⏰ Orari: Lun-Ven, 9:00-18:00</li>
-                <li>📞 Telefono: +39 0123 456 789</li>
+                <li><a href="tel:+390123456789" class="contact-link">📞 Telefono: +39 0123 456 789</a></li>
             </ul>
 
-            <img src="/images/applicazioni-sofware.jpg" alt="applicazioni-sofware" id="contatti_pic" class="main-article-img" />
         </div>
 
     </div>
