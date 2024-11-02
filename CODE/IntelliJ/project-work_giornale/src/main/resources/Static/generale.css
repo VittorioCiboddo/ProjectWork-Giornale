@@ -60,6 +60,7 @@ nav.navbar {
     transition: background-color 0.5s ease-in-out; /* Transizione per il cambio del colore */
 }
 
+
 nav.navbar a {
     color: white !important;
     padding: 10px 20px;
