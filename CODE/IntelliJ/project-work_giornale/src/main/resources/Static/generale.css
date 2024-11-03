@@ -363,3 +363,62 @@ nav.navbar a:hover {
 .dark-theme #list5 a {
     color: #9dbed1 !important;
 }
+
+
+/*  */
+@media only screen and (max-width: 950px) {
+
+.site-title {
+    margin-left: 40%;
+}
+
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+.main-container {
+    width: 100%;
+}
+
+#contenitore-foto {
+    height: auto !important;
+}
+
+.site-title {
+    display: none !important;
+}
+
+header{
+    height: 90px;
+}
+
+.logo {
+    margin-left: 30% !important;
+}
+
+.theme-toggle {
+    transform: none;
+    margin-top: 7%;
+    margin-left:84%;
+    position:static;
+    z-index: 100;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-article {
+margin-left: -14px;
+    text-align: center;
+}
+
+.ultimora {
+    margin-right: 0%;
+    width: 146px;
+}
+
+
+}
