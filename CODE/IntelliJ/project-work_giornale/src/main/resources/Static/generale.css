@@ -7,7 +7,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     transition: background-image 0.5s ease, color 0.5s ease;
 }
 
@@ -17,7 +16,6 @@ body {
     margin: 0 auto;
     padding-top: 20px;
     border-radius: 8px; /* Angoli arrotondati come il menu a sinistra */
-    overflow: hidden; /* Nasconde eventuali contenuti che escono dai bordi */
 }
 
 header {
@@ -78,12 +76,12 @@ nav.navbar a:hover {
 
 /* Layout flessibile e margini */
 .main-content {
-    display: flex;
     min-height: calc(100vh - 200px); /* Sottrae altezza per header e footer */
 }
 
 .ultimora {
     width: 25%;
+    max-height: 600px; /* imposta un'altezza massima */
     background-color: #ffffff;
     padding: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -175,9 +173,13 @@ nav.navbar a:hover {
 
 .sticky {
     position:sticky;
-    top: 70px;
+    top: 0px;
 }
 
+.ultimora.sticky {
+    position: sticky;
+    top: 0;
+}
 
 
 /* Stile del dropdown con transizione */
@@ -391,7 +393,10 @@ nav.navbar a:hover {
 }
 
 #contenitore-foto {
-    height: auto !important;
+    margin-top: 20px; /* Spazio sopra */
+    height: 193px;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .site-title {
