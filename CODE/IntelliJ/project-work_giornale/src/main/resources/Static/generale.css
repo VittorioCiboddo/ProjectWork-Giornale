@@ -173,12 +173,12 @@ nav.navbar a:hover {
 
 .sticky {
     position:sticky;
-    top: 0px;
+    top: 70px;
 }
 
 .ultimora.sticky {
     position: sticky;
-    top: 0;
+    top: 70px;
 }
 
 
