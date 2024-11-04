@@ -259,6 +259,9 @@ nav.navbar a:hover {
     background-attachment: fixed;
 }
 
+.dark-theme .tutorials {
+    color: white !important;
+}
 
 .dark-theme .btn-primary {
     background-color: #252525; /* Colore di sfondo del pulsante */
